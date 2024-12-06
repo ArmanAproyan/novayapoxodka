@@ -1,0 +1,76 @@
+@use '../../styles/variables.scss' as vars;
+
+.wrapper {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0px 0px 15px 0px black;
+    transition: 0.5s;
+}
+
+.header {
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.headerScroll {
+    background: vars.$gradient;
+}
+
+.header__logo {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo__img {
+    width: 100px;
+    transition: 0.2s;
+
+    &:hover {
+        width: 102px;
+    }
+}
+
+.menu__list {
+    display: flex;
+    gap: 50px;
+}
+
+.list__item {
+    font-family: "Montserrat";
+    font-weight: 500;
+
+    &>p {
+        color: #d7ccc8;
+        white-space: nowrap;
+
+    }
+
+    &:hover>p {
+        color: vars.$main-color;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+        cursor: pointer;
+    }
+}
+
+
+
+@media (max-width:vars.$large-size) {
+    .logo__img {
+        width: 80px;
+    }
+
+    .list__item {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width:vars.$small-size) {
+
+    .logo__img {
+        width: 60px;
+    }
+}

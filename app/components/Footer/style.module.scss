@@ -1,0 +1,106 @@
+@use '../../styles/variables.scss' as vars;
+
+.footer {
+    background: vars.$gradient;
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+
+    &__container {
+        display: flex;
+        // flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    &__section {
+        flex: 1 1 300px;
+        margin-bottom: 20px;
+        cursor: pointer;
+        flex-direction: row;
+    }
+
+    &__title {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        color: #f0a500;
+    }
+
+    &__text {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    &__list {
+        list-style: none;
+        padding: 0;
+    }
+
+    &__item {
+        margin-bottom: 10px;
+        font-size: 1rem;
+    }
+
+    &__socials {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+    }
+
+    &__link {
+        color: #f0a500;
+        text-decoration: none;
+        transition: color 0.3s;
+
+        &:hover {
+            color: #ffcb47;
+        }
+    }
+
+    &__copyright {
+        margin-top: 20px;
+        font-size: 0.875rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        padding-top: 10px;
+    }
+}
+
+@media (max-width: vars.$large-size) {
+    .footer__title {
+        font-size: 1.4rem;
+    }
+    .footer__text {
+        font-size: 0.9rem;
+    }
+    .footer__list {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: vars.$medium-size) {
+    .footer__title {
+        font-size: 1.3rem;
+    }
+    .footer__text {
+        font-size: 0.7rem;
+    }
+    .footer__item {
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: vars.$small-size) {
+    .footer__title {
+        font-size: 1.2rem;
+    }
+    .footer__text {
+        font-size: 0.6rem;
+    }
+    .footer__item {
+        font-size: 0.6rem;
+    }
+}

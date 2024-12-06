@@ -1,0 +1,55 @@
+@use '../../styles/variables.scss' as vars;
+.block {
+    text-align: center;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    overflow: hidden;
+    z-index: 0;
+  
+    .text {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #f0a500;
+    }
+  }
+  
+  .map {
+    display: inline-block;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 400px; 
+    margin: 0 auto; 
+    z-index: 0;
+  }
+  
+  @media (max-width: 768px) {
+    .map {
+      height: 300px;
+    }
+  
+    .text {
+      font-size: 20px; 
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .map {
+      height: 250px; 
+    }
+  
+    .text {
+      font-size: 18px; 
+      margin-bottom: 15px;
+    }
+  
+    .block {
+      margin: 10px;
+    }
+  }
+  

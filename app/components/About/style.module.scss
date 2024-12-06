@@ -1,0 +1,102 @@
+@use '../../styles//variables.scss' as vars;
+
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 0;
+    background-color: white;  
+  }
+  
+  .about {
+      max-width: 900px;
+      padding: 40px 20px;
+      font-family: Arial, sans-serif;
+      color: #333;
+  
+      &__text_block {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 20px;
+        font-family:'Montserrat';
+        color: vars.$dark-color;
+      }
+    
+      &__title {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 40px;
+        color: #333;
+        background: linear-gradient(90deg, #f2709c, #ff9472);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 1s ease, transform 1s ease;
+      }
+    
+      &__title.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    
+      &__section {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 1s ease, transform 1s ease;
+        margin-bottom: 40px;
+    
+        &.visible {
+          opacity: 1;
+          transform: translateY(0);
+        }
+    
+        h2 {
+          font-size: 1.8rem;
+          font-family:'Montserrat';
+          margin-bottom: 15px;
+          font-weight: 600;
+          background: linear-gradient(90deg, vars.$dark-color, vars.$dark-color);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+    
+        p, ul {
+          font-size: 1rem;
+          line-height: 1.6;
+          color: vars.$dark-color;
+        }
+    
+        ul {
+          padding-left: 0;
+          list-style: none;
+    
+          li {
+            margin: 8px 0;
+            
+            strong {
+              color: #333;
+            }
+          }
+        }
+    
+        &.left {
+          text-align: left;
+          align-items: flex-start;
+          padding-right: 20px;
+        }
+    
+        &.right {
+          text-align: right;
+          align-items: flex-end;
+          padding-left: 20px;
+        }
+      }
+    }
+    

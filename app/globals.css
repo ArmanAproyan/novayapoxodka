@@ -1,21 +1,33 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  font-family: "Montserrat";
+  font-weight: 300;
+}
+ul,li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+
+
+.container {
+  width: 80%;
+  margin: 0 auto;
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+.title{
+  color: #4e342e;
+  font-family: "Montserrat";
+  font-weight: 500;
+  font-size: 2rem;
+}
+.subtitle{
+  color: #6d4c41;
+  font-size: 1rem; 
 }
