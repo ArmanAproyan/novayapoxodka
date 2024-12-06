@@ -1,7 +1,10 @@
 'use client'
 import styles from './style.module.scss';
 import React, { useState } from 'react';
-import Map from '../Map/Map';
+import dynamic from 'next/dynamic';
+const Map = dynamic(() => import('../Map/Map'), {
+    ssr: false
+})
 
 interface IfooterProp {
     scrollRef: React.RefObject<HTMLDivElement>
