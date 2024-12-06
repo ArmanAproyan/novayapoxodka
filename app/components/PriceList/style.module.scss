@@ -1,4 +1,4 @@
-@use '../../styles//variables.scss' as vars;
+@use '../../styles/variables.scss' as vars;
 
 .container {
     width: 100%;
@@ -21,12 +21,10 @@
             transform: scale(1.1);
         }
     }
-
 }
 
 .block {
     width: 40%;
-    height: 700px;
     border: 2px solid vars.$main-color;
     background-color: vars.$dark-color;
     opacity: 0.8;
@@ -94,40 +92,31 @@
     .block {
         width: 70%;
     }
-
 }
 
 @media (max-width: vars.$large-size) {
     .block {
         width: 60%;
     }
-    .container__control {
-        font-size: 60px;
-    }
-   
+ 
 }
 
 @media (max-width: vars.$medium-size) {
     .block__price_container__items__text_block {
         h2 {
-         font-size: 0.9rem;
+            font-size: 0.9rem;
         }
         span {
-         font-size: 0.6rem;
+            font-size: 0.6rem;
         }
-     }
-     .block__price_container__items__price_block {
-         font-size: 0.3rem;
-     }
+    }
+    .block__price_container__items__price_block {
+        font-size: 0.3rem;
+    }
     .block {
         width: 70%;
     }
-    .container__control {
-        font-size: 30px;
-    }
-
 }
-
 
 @media (max-width: vars.$small-size) {
     .block {
@@ -137,11 +126,25 @@
             margin-bottom: 10px;
         }
     }
-    .container__control {
-        font-size: 25px;
+}
+
+@media (max-width: 375px) {
+
+    .block {
+        width: 90%;
     }
 
- 
+    .block__name {
+        font-size: 0.4rem;
+    }
+
+    .block__price_container__items__text_block h2 {
+        font-size: 0.7rem;
+    }
+
+    .block__price_container__items__price_block h1 {
+        font-size: 0.5rem;
+    }
 }
 
 @keyframes ChangeMenue {
@@ -151,6 +154,4 @@
     to {
         opacity: 1;
     }
-
 }
-

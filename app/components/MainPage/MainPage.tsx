@@ -5,7 +5,6 @@ import Main from '../main/Main';
 import { Services } from '../Services/Services';
 import Footer from '../Footer/Footer';
 import { useEffect, useRef, useState } from 'react';
-import About from '../About/About';
 import PriceList from '../PriceList/PriceList';
 
  const MainPage = () => {
@@ -54,9 +53,10 @@ import PriceList from '../PriceList/PriceList';
     <div className={styles.wrapper}>
       <Header handleScroll={handleScroll} />
       <Main scrollRef={mainScrollRef} handleScroll={handleScroll} />
-      <About />
+      {/* <About /> */}
       <Services scrollRef={serviceScrollRef} />
-      <PriceList scrollRef={priceScrollRef}/>
+      <PriceList title='Ремонт Обуви' scrollRef={priceScrollRef}/>
+      <PriceList title='Ремонт Ключей' scrollRef={priceScrollRef}/>
       <div className={styles.ddd}></div>
       <Footer scrollRef={contactsScrollRef} />
     </div>

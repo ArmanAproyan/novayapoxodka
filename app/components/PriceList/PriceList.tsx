@@ -3,32 +3,19 @@ import { priceList, keyRepairPriceList } from '../../constants/priceList';
 import { useState } from 'react';
 
 interface IpriceListProp {
-    scrollRef: React.RefObject<HTMLDivElement>
+    scrollRef: React.RefObject<HTMLDivElement>,
+    title: string
 };
 
-const PriceList: React.FC<IpriceListProp> = ({scrollRef}) => {
+const PriceList: React.FC<IpriceListProp> = ({scrollRef, title}) => {
 
-    const [slide,setSlide] = useState<string>('shooze');
     const [showList,setShowList] = useState(priceList);
 
-    const handleChangeSlide = () => {
-        if(slide == 'shooze') {
-            setSlide('key')
-            setShowList(keyRepairPriceList)
-        } 
-        if(slide == 'key') {
-            setSlide('shooze')
-            setShowList(priceList)
-        }
-    };
-
-
     return <div ref={scrollRef} className={styles.container}>
-        <div className={styles.container__control} onClick={handleChangeSlide}>{'<'}</div>
         <div className={styles.block}>
 
             <div className={styles.block__name}>
-                <h1>Цены на {slide == 'shooze' ? 'ремонт обуви': 'ремонт ключей'}</h1>
+                <h1>Цены на {title}</h1>
             </div>
             <div className={styles.block__price_container}>
                 {showList.map((val) => {
@@ -47,7 +34,6 @@ const PriceList: React.FC<IpriceListProp> = ({scrollRef}) => {
 
             </div>
         </div>
-        <div className={styles.container__control} onClick={handleChangeSlide}>{'>'}</div>
 
     </div>
 };

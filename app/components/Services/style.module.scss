@@ -56,7 +56,7 @@
 
 @media (max-width:vars.$large_size) {
     .text__title {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
     }
     .text__subtitle {
         font-size: 0.8rem;
@@ -103,5 +103,18 @@
     }
     .info__block{
         width: 200px;
+    }
+}
+
+
+@media(max-width: 375px) {
+    .services__text {
+        h2 {
+            font-size: 1.6rem;
+
+        }
+        p {
+            font-size: 0.7rem;
+        }
     }
 }
