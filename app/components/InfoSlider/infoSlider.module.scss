@@ -1,0 +1,34 @@
+.info__slider__wrapper {
+    background-color: #fff;
+
+    & > div > button:nth-child(1) {
+        left: 20px;
+        z-index: 99;
+    }
+    
+    & > div > button:nth-child(3) {
+        right: 20px;
+    }
+
+    .slider__element__wrapper {
+        display: flex !important;
+        align-items: center;
+        width: 100%;
+        justify-content: space-between;
+        height: 300px;
+
+        .left__wrapper {
+            background-color: red;
+            width: 100%; 
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center
+        };
+
+        .right__wrapper {
+            width: 50%;
+        }
+    }
+}
