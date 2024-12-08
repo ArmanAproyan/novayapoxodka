@@ -6,6 +6,10 @@ import Footer from '../Footer/Footer';
 import { useRef, useState } from 'react';
 import PriceList from '../PriceList/PriceList';
 import { ToastContainer } from 'react-toastify';
+import InfoSlider from '../InfoSlider';
+
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 import 'react-toastify/dist/ReactToastify.css';
 import styles from './style.module.scss';
 
@@ -39,6 +43,7 @@ const MainPage = () => {
     <div className={styles.wrapper}>
       <Header handleScroll={handleScroll} />
       <Main scrollRef={mainScrollRef} handleScroll={handleScroll} />
+      <InfoSlider />
       <Services scrollRef={serviceScrollRef} />
       <PriceList title='Ремонт Обуви' scrollRef={priceScrollRef} />
       <PriceList title='Ремонт Ключей' />
