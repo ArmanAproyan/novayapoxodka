@@ -3,7 +3,7 @@ import { priceList, keyRepairPriceList } from '../../constants/priceList';
 import { useState } from 'react';
 
 interface IpriceListProp {
-    scrollRef: React.RefObject<HTMLDivElement>,
+    scrollRef?: React.RefObject<HTMLDivElement>,
     title: string
 };
 

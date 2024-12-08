@@ -2,6 +2,9 @@
 import styles from './style.module.scss';
 import React, { useState } from 'react';
 import dynamic from 'next/dynamic';
+import { toast } from 'react-toastify';
+import { toastSettings } from '@/app/utils/constatns';
+
 const Map = dynamic(() => import('../Map/Map'), {
     ssr: false
 })
@@ -19,7 +22,8 @@ const Footer: React.FC<IfooterProp> = ({scrollRef}) => {
         navigator.clipboard.writeText('+7 (911) 276-04-14')
             .then(() => {
                 setIsCopied(true);
-                setTimeout(() => setIsCopied(false), 2000);
+                // setTimeout(() => setIsCopied(false), 2000);
+                toast.success('Номер скопирован!', toastSettings)
             })
             .catch((err) => console.error('Ошибка копирования: ', err));
     };
@@ -41,7 +45,7 @@ const Footer: React.FC<IfooterProp> = ({scrollRef}) => {
                         <li className={styles.footer__item}>Email: armanaproyan114@gmai.com</li>
                         <li onClick={handleCopy} className={styles.footer__item}>
                             Телефон: +7 (911) 276-04-14
-                            {isCopied && <span className={styles.footer__copiedMessage}> — Номер скопирован!</span>}
+                            {/* {isCopied && <span className={styles.footer__copiedMessage}> — Номер скопирован!</span>} */}
                         </li>
                     </ul>
                 </div>
