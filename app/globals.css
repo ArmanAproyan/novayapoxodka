@@ -8,6 +8,10 @@ body{
   font-family: "Montserrat";
   font-weight: 300;
 }
+
+.leaflet-control-attribution, .leaflet-control {
+  display: none;
+}
 ul,li {
   list-style: none;
 }
