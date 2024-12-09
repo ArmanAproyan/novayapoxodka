@@ -6,9 +6,9 @@ import Footer from '../Footer/Footer';
 import { useRef, useState } from 'react';
 import PriceList from '../PriceList/PriceList';
 import { ToastContainer } from 'react-toastify';
+import AccardionAnswer from '../AccardionAnswer/AccardionAnswer.';
 import 'react-toastify/dist/ReactToastify.css';
 import styles from './style.module.scss';
-
 const MainPage = () => {
   const serviceScrollRef = useRef<null | HTMLDivElement>(null);
   const mainScrollRef = useRef<null | HTMLDivElement>(null);
@@ -43,6 +43,7 @@ const MainPage = () => {
       <Services scrollRef={serviceScrollRef} />
       <PriceList title='Ремонт Обуви' scrollRef={priceScrollRef} />
       <PriceList title='Ремонт Ключей' />
+      <AccardionAnswer/>
       <div className={styles.ddd}></div>
       <Footer scrollRef={contactsScrollRef} />
       <ToastContainer />

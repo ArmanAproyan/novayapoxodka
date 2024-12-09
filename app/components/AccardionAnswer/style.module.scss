@@ -1,0 +1,87 @@
+@use '../../styles//variables.scss' as vars;
+.container {
+    // max-width: 800px;
+    min-width: 600px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+    &__text_block {
+        text-align: center;
+        margin-bottom: 30px;
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: vars.$dark-color;
+            margin-bottom: 20px;
+        }
+
+      }
+  }
+  
+
+
+  .accordion {
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  
+  .accordionSummary {
+    background-color: #007bff;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  
+    &:hover {
+      background-color: #0056b3;
+    }
+  
+    .accordionQuestion {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+  }
+  
+  .accordionSummary.Mui-expanded {
+    background-color: #0056b3;
+  }
+  
+  .accordionDetails {
+    background-color: #f0f8ff;
+    padding: 20px;
+    font-size: 1rem;
+    color: #333;
+    border-radius: 8px;
+  }
+  
+  .accordionDetails p {
+    margin: 0;
+    line-height: 1.6;
+  }
+
+.question_text {
+    color: vars.$dark-color;
+    font-family: "Montserrat";
+    font-size: 20px;
+    font-weight: 500;
+}
+
+  .answer_text {
+    color: black;
+  }
+  
+  .accordion .Mui-expanded {
+    margin: 0;
+  }
+  
+  .MuiAccordion-root:before {
+    display: none;
+  }
