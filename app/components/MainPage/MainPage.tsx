@@ -43,8 +43,8 @@ const MainPage = () => {
       <Services scrollRef={serviceScrollRef} />
       <PriceList title='Ремонт Обуви' scrollRef={priceScrollRef} />
       <PriceList title='Ремонт Ключей' />
-      <AccardionAnswer/>
       <div className={styles.ddd}></div>
+      <AccardionAnswer/>
       <Footer scrollRef={contactsScrollRef} />
       <ToastContainer />
     </div>
