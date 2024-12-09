@@ -8,6 +8,11 @@ import PriceList from '../PriceList/PriceList';
 import { ToastContainer } from 'react-toastify';
 import AccardionAnswer from '../AccardionAnswer/AccardionAnswer.';
 import 'react-toastify/dist/ReactToastify.css';
+// import NavigateSocial from '../NavigateSocial/NavigateSocial';
+import dynamic from 'next/dynamic';
+const NavigateSocial = dynamic(() => import('../NavigateSocial/NavigateSocial'),{
+  ssr: false
+});
 import styles from './style.module.scss';
 const MainPage = () => {
   const serviceScrollRef = useRef<null | HTMLDivElement>(null);
@@ -45,6 +50,7 @@ const MainPage = () => {
       <PriceList title='Ремонт Ключей' />
       <div className={styles.ddd}></div>
       <AccardionAnswer/>
+      <NavigateSocial/>
       <Footer scrollRef={contactsScrollRef} />
       <ToastContainer />
     </div>
