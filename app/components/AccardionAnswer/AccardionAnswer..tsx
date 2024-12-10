@@ -15,7 +15,9 @@ const AccardionAnswer = () => {
         </div>
         {acardionAnswerInfo.map((val,index) => {
             return (
-                <div key={index}>
+                <div
+                style={{marginTop: '20px'}}
+                 key={index}>
                 <Accordion>
                 <AccordionSummary
                   expandIcon={<FaArrowDown/>}
