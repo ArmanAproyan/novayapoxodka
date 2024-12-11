@@ -1,11 +1,4 @@
-interface IpriceList {
-    title: string,
-    description: string,
-    price: number
-};
-
-
-interface IpriceList {
+export interface IpriceList {
     title: string;
     description: string;
     price: number;

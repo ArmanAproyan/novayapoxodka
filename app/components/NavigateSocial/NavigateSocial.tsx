@@ -19,7 +19,7 @@ const StyledSpeedDial = styled(SpeedDial)(({ theme }) => ({
   '& .MuiSpeedDial-fab': {
     backgroundColor: 'green',
     color: 'white', 
-  },
+  }
 }));
 
 const actions = [
