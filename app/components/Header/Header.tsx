@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { IoMenu } from "react-icons/io5";
 import { IoMdClose } from "react-icons/io";
 import { Menu } from '../Menu/Menu';
+import { FaKeycdn } from "react-icons/fa";
 
 interface IheraderProp {
     handleScroll: (scrollName: string) => void
@@ -51,15 +52,10 @@ export const Header: React.FC<IheraderProp> = ({ handleScroll }) => {
             <header className={`${styles.wrapper} ${isScroll || isMenuOpen ? styles.headerScroll : ""}`}>
                 <div className={`container ${styles.header}`}>
                     <div className={styles.header__logo}>
-                        {/* <Image
-                            onClick={() => handleScroll('main')}
-                            width={50}
-                            height={50}
-                            src="/assets/images/logo.png"
-                            alt="logo"
-                            className={styles.logo__img}
-                        /> */}
-                        <h1 onClick={() => handleScroll('main')}>Logo</h1>
+               
+                        <h2 style={{color: 'white'}} onClick={() => handleScroll('main')}>
+                            <FaKeycdn color='white' fontSize={'20px'}/> Лого
+                        </h2>
                     </div>
                     {
                         !isSmall ?

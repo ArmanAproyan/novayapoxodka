@@ -11,7 +11,7 @@ const AccardionAnswer = () => {
   return (
     <div className={styles.container}>
         <div className={styles.container__text_block}>
-            <h1 style={{fontSize: '1.4rem'}}>Часто Задоваемые Вопросы</h1>
+            <h1 style={{fontSize: '1.4rem'}}>Часто задаваемые вопросы</h1>
         </div>
         {acardionAnswerInfo.map((val,index) => {
             return (

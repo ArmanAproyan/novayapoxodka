@@ -1,0 +1,74 @@
+@use '../../styles/variables.scss' as vars;
+
+.reviewForm {
+  width: 100%;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 50px 20px;
+
+  &__title {
+    color: vars.$dark-color;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+  }
+
+  &__reviews {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__reviews__item {
+    width: 100%;
+    padding: 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__authorBlock {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  &__authorBlock__image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__authorBlock__name {
+    font-size: 1.2rem;
+    color: vars.$dark-color;
+    font-weight: bold;
+  }
+
+  &__fakeReview {
+    font-size: 1rem;
+    color: #666;
+    margin-top: 15px;
+  }
+
+  p {
+    text-align: center;
+    font-size: 1rem;
+    color: #333;
+    margin-top: 30px;
+  }
+
+  strong {
+    color: vars.$dark-color;
+  }
+}

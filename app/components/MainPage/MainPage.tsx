@@ -7,7 +7,9 @@ import { useRef, useState } from 'react';
 import PriceList from '../PriceList/PriceList';
 import { ToastContainer } from 'react-toastify';
 import AccardionAnswer from '../AccardionAnswer/AccardionAnswer.';
+import ReviewForm from '../ReviewForm/ReviewForm';
 import 'react-toastify/dist/ReactToastify.css';
+
 // import NavigateSocial from '../NavigateSocial/NavigateSocial';
 import dynamic from 'next/dynamic';
 const NavigateSocial = dynamic(() => import('../NavigateSocial/NavigateSocial'),{
@@ -21,13 +23,15 @@ const MainPage = () => {
   const mainScrollRef = useRef<null | HTMLDivElement>(null);
   const priceScrollRef = useRef<null | HTMLDivElement>(null);
   const contactsScrollRef = useRef<null | HTMLDivElement>(null);
+  const reviewsScrollRef = useRef<null | HTMLDivElement>(null);
   const [currentPosition, setCurrentPosition] = useState(0)
 
   const [isScrolls, setIsScrolls] = useState([
     { name: 'services', start: false, ref: serviceScrollRef },
     { name: 'main', start: false, ref: mainScrollRef },
     { name: 'price', start: false, ref: priceScrollRef },
-    { name: 'contacts', start: false, ref: contactsScrollRef }
+    { name: 'contacts', start: false, ref: contactsScrollRef },
+    { name: 'reviews', start: false, ref: reviewsScrollRef}
   ]);
 
 
@@ -51,6 +55,7 @@ const MainPage = () => {
       <PriceListNav scrollRef={priceScrollRef}/>
       <AccardionAnswer/>
       <NavigateSocial/>
+      <ReviewForm scrollRef={reviewsScrollRef}/>
       <Footer scrollRef={contactsScrollRef} />
       <ToastContainer />
     </div>
