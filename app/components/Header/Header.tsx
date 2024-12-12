@@ -76,7 +76,7 @@ export const Header: React.FC<IheraderProp> = ({ handleScroll }) => {
                                 </ul>
                             </nav>
                             :
-                            (isMenuOpen ? <IoMdClose color='#d7ccc8' size={30} onClick={toggleMenu} /> : <IoMenu color='#d7ccc8' size={30} onClick={toggleMenu} />)
+                            (isMenuOpen ? <IoMdClose color='#d7ccc8' size={25} onClick={toggleMenu} /> : <IoMenu color='#d7ccc8' size={25} onClick={toggleMenu} />)
                     }
                 </div>
             </header>

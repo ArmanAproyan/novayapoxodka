@@ -14,19 +14,24 @@ interface IMenuItem {
     scrollName: string;
 }
 
+const menuItems: IMenuItem[] = [
+    { name: 'Услуги', scrollName: 'services' },
+    { name: 'Цены', scrollName: 'price' },
+    { name: 'Наши работы', scrollName: '#' },
+    { name: 'Контакты', scrollName: 'contacts' }
+];
+
 export const Menu = ({ isOpen, handleScroll, toggleMenu }: IProps) => {
     const modalRef = useRef<HTMLDivElement | null>(null);
 
-    const menuItems: IMenuItem[] = [
-        { name: 'Услуги', scrollName: 'services' },
-        { name: 'Цены', scrollName: 'price' },
-        { name: 'Наши работы', scrollName: '#' },
-        { name: 'Контакты', scrollName: 'contacts' }
-    ];
+    const handleItemClick = (scrollName: string) => {
+        handleScroll(scrollName);
+        toggleMenu();
+    };
 
     return (
         <div
-            className={`${isOpen ? styles.open : styles.close} ${styles.modal}`}
+            className={`${styles.modal} ${isOpen ? styles.open : styles.close}`}
             ref={modalRef}
         >
             {isOpen && (
@@ -34,12 +39,13 @@ export const Menu = ({ isOpen, handleScroll, toggleMenu }: IProps) => {
                     <nav className={styles.menu}>
                         <ul className={styles.menu__list}>
                             {menuItems.map((item, index) => (
-                                <li key={index} className={styles.list__item}>
+                                <li
+                                    key={item.name}
+                                    className={styles.list__item}
+                                    style={{ '--i': index } as React.CSSProperties}
+                                >
                                     <span
-                                        onClick={() => {
-                                            handleScroll(item.scrollName);
-                                            toggleMenu();
-                                        }}
+                                        onClick={() => handleItemClick(item.scrollName)}
                                     >
                                         {item.name}
                                     </span>
