@@ -67,7 +67,7 @@ export const Header: React.FC<IheraderProp> = ({ handleScroll }) => {
                                     <li onClick={() => handleScroll('price')} className={styles.list__item}>
                                         <p>Цены</p>
                                     </li>
-                                    <li className={styles.list__item}>
+                                    <li onClick={() => handleScroll('beforeAfter')} className={styles.list__item}>
                                         <p>Наши работы</p>
                                     </li>
                                     <li onClick={() => handleScroll('contacts')} className={styles.list__item}>

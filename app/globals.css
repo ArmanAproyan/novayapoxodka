@@ -36,3 +36,15 @@ a {
   color: #6d4c41;
   font-size: 1rem; 
 }
+
+.image-wrapper {
+  border: 2px solid red;
+  position: relative;
+}
+
+@media(max-width:375px) {
+  .image-wrapper {
+    width: 270px;
+    height: 110px;
+  }
+}

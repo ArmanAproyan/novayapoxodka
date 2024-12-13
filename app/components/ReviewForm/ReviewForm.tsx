@@ -40,7 +40,7 @@ const ReviewForm: React.FC<IreviewsProp> = ({ scrollRef }) => {
 
   return (
     <div ref={scrollRef} className={styles.reviewForm}>
-      <h2 className={styles.reviewForm__title}>Отзывы</h2>
+      <h2 className={styles.reviewForm__title}>Лучшие отзывы от любимых клиентов</h2>
       <div className={styles.reviewForm__reviews}>
         {fakeReviews && fakeReviews.map((item, index) => {
           return (

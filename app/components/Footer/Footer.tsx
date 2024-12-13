@@ -36,7 +36,11 @@ const Footer: React.FC<IfooterProp> = ({scrollRef}) => {
                     <p className={styles.footer__text}>
                         Санкт-Петербург, ул.12/4
                         <br />
-                        Санкт-Петербург, Улянка, ул.1
+                        Санкт-Петербург, ул.16/2
+                        <br />
+                        Санкт-Петербург, ул.15
+
+
                     </p>
                 </div>
                 <div className={styles.footer__section}>

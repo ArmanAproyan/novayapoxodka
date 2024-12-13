@@ -1,0 +1,37 @@
+  @use '../../styles//variables.scss' as vars;
+  
+  .container__wraperr {
+    margin-top: 50px;
+    width: 500px;
+    height: 100%;
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px; /* Скругление углов */
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.596); /* Легкая тень для глубины */
+  
+    /* Добавляем красивую рамку */
+    border: 5px solid transparent; /* Прозрачная рамка для применения градиента */
+    background-image: linear-gradient(45deg, #ff7e5f, #feb47b); /* Градиент */
+    background-clip: border-box; /* Рамка с градиентом */
+  }
+  
+
+
+
+
+
+
+  @media (max-width: 550px) {
+    .container__wraperr {
+        width: 350px;
+    }
+  }
+
+  @media (max-width: 375px) {
+    .container__wraperr {
+        width: 270px;
+    }
+  }

@@ -10,10 +10,12 @@
   padding: 50px 20px;
 
   &__title {
-    color: vars.$dark-color;
-    font-size: 2rem;
+    font-family: "Montserrat";
+    color: #4e342e;
+    font-size: 1.3rem;
     font-weight: bold;
     margin-bottom: 30px;
+    text-align: center; 
   }
 
   &__reviews {
