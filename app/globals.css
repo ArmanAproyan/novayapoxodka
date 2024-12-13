@@ -37,14 +37,14 @@ a {
   font-size: 1rem; 
 }
 
-.image-wrapper {
-  border: 2px solid red;
-  position: relative;
+.map-container {
+  display: flex;
+  flex-direction: column;
 }
 
-@media(max-width:375px) {
-  .image-wrapper {
-    width: 270px;
-    height: 110px;
-  }
+/* map Component styles */
+
+.leaflet-popup-content {
+  max-width: auto !important;
+  max-width: none !important;
 }
