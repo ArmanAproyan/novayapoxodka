@@ -26,7 +26,7 @@ const MapComponent = () => {
     });
 
     const points = [
-      { lat: 59.83400, lng: 30.20472, title: 'ТРК ульянка 1 етаж новая походка', image: endpointImage },
+      { lat: 59.83400, lng: 30.20472, title: 'ТРК ульянка 1 этаж новая походка', image: endpointImage },
     ];
 
     points.forEach((point) => {
