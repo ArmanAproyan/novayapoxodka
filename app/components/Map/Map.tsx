@@ -26,7 +26,7 @@ const MapComponent = () => {
     });
 
     const points = [
-      { lat: 59.83400, lng: 30.20472, title: 'ТРК ульянка 1 этаж новая походка', image: endpointImage },
+      { lat: 59.83400, lng: 30.20472, title: 'ТРК Ульянка 1 этаж новая походка', image: endpointImage },
     ];
 
     points.forEach((point) => {
@@ -34,7 +34,6 @@ const MapComponent = () => {
         .addTo(map)
         .bindPopup(`
             <p>${point.title}</p>
-            <br/>
             <img src="https://spb.ros-spravka.ru/upload/iblock/77c/trk-uljnka.jpg" alt="Местоположение" width="200px" height="100%" />
         `);
     });
