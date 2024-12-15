@@ -1,19 +1,10 @@
-import { useState, useEffect } from 'react';
 import { IpriceList } from '../../constants/priceList';
 import styles from './style.module.scss';
-
-import React from "react";
-// import styles from "./PriceTable.module.scss"; // Создайте модуль стилей или замените на свои
-
-// Интерфейс для данных прайс-листа
-
-
-// Пример прайс-листа
 
 const PriceList = ({ prices }: { prices: IpriceList[] }) => {
   return (
     <div className={styles.tableContainer}>
-      <h1 className={styles.title}>Прайс-лист</h1>
+      <h1 className={styles.title}>Наши Цены</h1>
       <table className={styles.table}>
         <thead>
           <tr>
@@ -38,6 +29,7 @@ const PriceList = ({ prices }: { prices: IpriceList[] }) => {
         <span>Процент за восстановление 30%</span>
         <br />
         <span>Процент за срочность 30%</span>
+        <h3>Гарантия на работу 2 недели</h3>
       </div>
 
     </div>

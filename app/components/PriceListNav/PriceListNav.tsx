@@ -4,7 +4,6 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import PriceList from '../PriceList/PriceList';
 import { priceList, keyRepairPriceList } from '@/app/constants/priceList';
-import styles from './style.module.scss';
 
 interface IpriceListProp {
   scrollRef: React.RefObject<HTMLDivElement>
