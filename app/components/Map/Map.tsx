@@ -28,7 +28,7 @@ const MapComponent = () => {
     });
 
     const points = [
-      { lat: 59.83400, lng: 30.20472, title: 'ТРК Ульянка 1 этаж новая походка', image: endpointImage },
+      { lat: 59.83400, lng: 30.20472, title: 'ТРК Ульянка 1 этаж левое крыло', image: endpointImage },
       { lat: 59.970092, lng: 30.405691, title: 'Ремонт ключей проспект металлистов 65', image: endpointImage}
     ];
 

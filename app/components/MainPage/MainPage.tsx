@@ -5,6 +5,7 @@ import { Services } from '../Services/Services';
 import Footer from '../Footer/Footer';
 import { useRef, useState } from 'react';
 import PriceList from '../PriceList/PriceList';
+import { priceList } from '@/app/constants/priceList';
 import { ToastContainer } from 'react-toastify';
 import AccardionAnswer from '../AccardionAnswer/AccardionAnswer.';
 import ReviewForm from '../ReviewForm/ReviewForm';
@@ -14,7 +15,6 @@ import dynamic from 'next/dynamic';
 const NavigateSocial = dynamic(() => import('../NavigateSocial/NavigateSocial'),{
   ssr: false
 });
-import PriceListNav from '../PriceListNav/PriceListNav';
 
 import styles from './style.module.scss';
 const MainPage = () => {
@@ -53,10 +53,10 @@ const MainPage = () => {
       <Header handleScroll={handleScroll} />
       <Main scrollRef={mainScrollRef} handleScroll={handleScroll} />
       <Services scrollRef={serviceScrollRef} />
-      <PriceListNav scrollRef={priceScrollRef}/>
       <SliderBlock scrollRef={beforeAfterScrollRef}/>
       <AccardionAnswer/>
       <NavigateSocial/>
+      <PriceList scrollRef={priceScrollRef} prices={priceList}/>
       <ReviewForm scrollRef={reviewsScrollRef}/>
       <Footer scrollRef={contactsScrollRef} />
       <ToastContainer />

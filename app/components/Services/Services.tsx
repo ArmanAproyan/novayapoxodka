@@ -38,12 +38,12 @@ export const Services: React.FC<IservicesProp> = ({scrollRef}) => {
                     <div className={styles.info__block}>
                         <div className={styles.block__header}>
                             <div className={styles.header__icon}>
-                                <IoKeyOutline fontSize={'70px'}/>
+                                <IoKeyOutline fontSize={'70px'} style={{marginTop: '10px'}}/>
                             </div>
-                            <h3 className={styles.header__title}>Ремонт Ключей</h3>
+                            <h3 className={styles.header__title}>Изготовление ключей</h3>
                         </div>
                         <div className={styles.block__text}>
-                            <p>Ремонт ключей быстро и качественно. Восстановление работоспособности любых типов ключей</p>
+                            <p>Изготовление ключей быстро и качественно. Восстановление работоспособности любых типов ключей</p>
                         </div>
                     </div>
 

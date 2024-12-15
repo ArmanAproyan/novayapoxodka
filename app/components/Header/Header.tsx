@@ -1,10 +1,12 @@
-'use client'
+'use client';
+
 import styles from './style.module.scss';
 import { useEffect, useState } from 'react';
 import { IoMenu } from "react-icons/io5";
 import { IoMdClose } from "react-icons/io";
 import { Menu } from '../Menu/Menu';
-import { FaKeycdn } from "react-icons/fa";
+import logo from '../../assets/logo/logo.png';
+import Image from 'next/image';
 
 interface IheraderProp {
     handleScroll: (scrollName: string) => void
@@ -12,7 +14,7 @@ interface IheraderProp {
 
 export const Header: React.FC<IheraderProp> = ({ handleScroll }) => {
 
-    const [isSmall, setIsSmall] = useState<boolean>(false); 
+    const [isSmall, setIsSmall] = useState<boolean>(false);
     const [isScroll, setIsScroll] = useState<boolean>(false);
     const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
@@ -52,9 +54,17 @@ export const Header: React.FC<IheraderProp> = ({ handleScroll }) => {
             <header className={`${styles.wrapper} ${isScroll || isMenuOpen ? styles.headerScroll : ""}`}>
                 <div className={`container ${styles.header}`}>
                     <div className={styles.header__logo}>
-               
-                        <h2 style={{color: 'white'}} onClick={() => handleScroll('main')}>
-                            <FaKeycdn color='white' fontSize={'20px'}/> Лого
+                        <h2 style={{ color: 'white' }} onClick={() => handleScroll('main')}>
+                            <div className={styles.header__logo}>
+                                <Image
+                                    width={120}
+                                    height={60}
+                                    alt="Logo"
+                                    src={logo}
+                                    className={styles.logo__img}
+                                />
+                                <span className={styles.logo__text}>Новая Походка</span>
+                            </div>
                         </h2>
                     </div>
                     {

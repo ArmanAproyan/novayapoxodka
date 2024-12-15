@@ -1,9 +1,16 @@
 import { IpriceList } from '../../constants/priceList';
 import styles from './style.module.scss';
 
-const PriceList = ({ prices }: { prices: IpriceList[] }) => {
+
+interface IpriceListProp {
+  prices: IpriceList[];
+  scrollRef: React.RefObject<HTMLDivElement>
+};
+
+
+const PriceList: React.FC<IpriceListProp> = ({ prices, scrollRef }) => {
   return (
-    <div className={styles.tableContainer}>
+    <div ref={scrollRef} className={styles.tableContainer}>
       <h1 className={styles.title}>Наши Цены</h1>
       <table className={styles.table}>
         <thead>
