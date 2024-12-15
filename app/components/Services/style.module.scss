@@ -5,6 +5,8 @@
     overflow: hidden;
     color: #6d4c41; 
     padding: 100px 0;  
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .services {
@@ -25,11 +27,15 @@
 
 .services__info {
     width: 100%;
-    display: grid;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
     grid-template-columns: repeat(4, 1fr);
-    gap: 5%;
+    gap: 40px;
     justify-items: center;
 }
+
 .info__block {
     max-width: 200px;
 }
@@ -51,7 +57,7 @@
 
 .block__text {
     text-align: center;
-    font-size: 0.8rem;
+    font-size: 0.6rem;
 }
 
 @media (max-width:vars.$large_size) {
@@ -75,9 +81,7 @@
             font-size: 0.8rem;
         }
     }
-    .block__text {
-        font-size: 0.7rem;
-    }
+
 }
 
 

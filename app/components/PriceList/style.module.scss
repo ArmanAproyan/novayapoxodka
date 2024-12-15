@@ -1,166 +1,94 @@
-@use '../../styles/variables.scss' as vars;
-
-.container {
+.tableContainer {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .table {
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    border-collapse: collapse;
+  
+    th,
+    td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+  
+    th {
+      background-color: #f4f4f4;
+      font-weight: bold;
+    }
+  
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+  
+    tr:hover {
+      background-color: #f1f1f1;
+    }
+  }
 
-    &__control {
-        font-size: 60px;
+  .percent_information {
+    width: 100%;
+    padding: 10px;
+    font-size: 12px;
+}
+
+  @media (max-width: 768px) {
+    .title {
+      font-size: 20px;
+    }
+  
+    .table {
+      th,
+      td {
         padding: 10px;
-        color: vars.$main-color;
-        user-select: none;
-        &:hover {
-            transform: scale(1.05);
-            cursor: pointer;
-        }
-        &:active {
-            transform: scale(1.1);
-        }
-    }
-}
-
-.block {
-    width: 40%;
-    height: 650px;
-    border: 2px solid vars.$main-color;
-    background-color: vars.$dark-color;
-    animation: ChangeMenue 1s;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-bottom: 50px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5), 0 4px 15px rgba(0, 0, 0, 0.3);
-    &__name {
-        width: 100%;
-        height: 50px;
-        margin-bottom: 40px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: white;
-        font-size: 0.7rem;
-        padding-top: 20px;
-        padding-bottom: 20px;
-    }
-
-    &__price_container {
-        width: 80%;
-        display: flex;
-        flex-direction: column;
-        gap: 25px;
-
-        &__items {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            &__text_block {
-                width: 80%;
-                height: 100%;
-
-                h2 {
-                    color: white;
-                    font-size: 0.8rem;
-                }
-
-                span {
-                    color: vars.$main-color;
-                    font-size: 0.7rem;
-                }
-            }
-
-            &__price_block {
-                width: 20%;
-                height: 100%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                font-size: 0.4rem;
-                color: white;
-            }
-        }
-    }
-}
-
-@media (max-width: 1024px) {
-    .block {
-        width: 70%;
-    }
-}
-
-@media (max-width: vars.$large-size) {
-    .block {
-        width: 60%;
-    }
- 
-}
-
-@media (max-width: vars.$medium-size) {
-    .block__price_container__items__text_block {
-        h2 {
-            font-size: 0.9rem;
-        }
-        span {
-            font-size: 0.6rem;
-        }
-    }
-    .block__price_container__items__price_block {
-        font-size: 0.3rem;
-    }
-    .block {
-        width: 70%;
-    }
-}
-
-@media (max-width: vars.$small-size) {
-    .block {
-        width: 90%;
-        &__name {
-            font-size: 0.5rem;
-            margin-bottom: 10px;
-        }
-    }
-}
-
-@media (max-width: 375px) {
-
-    .block {
-        width: 90%;
-    }
-
-    .block__name {
-        font-size: 0.4rem;
-    }
-
-    .block__price_container__items__text_block h2 {
-        font-size: 0.7rem;
-    }
-
-    .block__price_container__items__price_block h1 {
-        font-size: 0.5rem;
-    }
-}
-
-
-
-
-
-@keyframes rotateFromBack {
-    from {
-      transform: rotateY(90deg);
-      opacity: 0.5
-    }
-    to {
-      transform: rotateY(0deg);
-      opacity: 1;
+        font-size: 16px;
+      }
     }
   }
   
-  .block.animate {
-    animation: rotateFromBack 1s ease-in-out; 
+  @media (max-width: 480px) {
+    .title {
+      font-size: 18px;
+    }
+  
+    .table {
+      th,
+      td {
+        padding: 6px;
+        font-size: 14px;
+      }
+    }
+  
+    .tableContainer {
+      padding: 15px;
+    }
+  }
+  
+  @media (max-width: 320px) {
+    .title {
+      font-size: 13px;
+    }
+  
+    .table {
+      th,
+      td {
+        padding: 4px;
+        font-size: 13px;
+      }
+    }
+  
+    .tableContainer {
+      padding: 10px;
+    }
   }
   

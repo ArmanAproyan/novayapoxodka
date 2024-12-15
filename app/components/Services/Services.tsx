@@ -3,6 +3,7 @@ import { IoKeyOutline } from "react-icons/io5";
 import { PiBoot } from "react-icons/pi";
 import { MdOutlineCleanHands } from "react-icons/md";
 import { FaKeycdn } from "react-icons/fa";
+import { IoBagOutline } from "react-icons/io5";
 
 interface IservicesProp {
     scrollRef: React.RefObject<HTMLDivElement>
@@ -51,10 +52,10 @@ export const Services: React.FC<IservicesProp> = ({scrollRef}) => {
                             <div className={styles.header__icon}>
                                 <MdOutlineCleanHands fontSize={'70px'}/>
                             </div>
-                            <h3 className={styles.header__title}>Чистка и полировка</h3>
+                            <h3 className={styles.header__title}>Химчистка и покраска обуви</h3>
                         </div>
                         <div className={styles.block__text}>
-                           <p>Чистка и полировка обуви. Уход, восстановление блеска и свежести.</p>
+                           <p>Химистка и полировка обуви. Уход, восстановление блеска и свежести.</p>
                         </div>
                     </div>
 
@@ -69,6 +70,18 @@ export const Services: React.FC<IservicesProp> = ({scrollRef}) => {
                             <p>Изготовление ключей для домофонов быстро и надежно. Гарантия совместимости и качества</p>
                         </div>
                     </div>
+                    <div className={styles.info__block}>
+                        <div className={styles.block__header}>
+                            <div className={styles.header__icon}>
+                                <IoBagOutline fontSize={'70px'}/>
+                            </div>
+                            <h3 className={styles.header__title}>Ремонт сумок и чемоданов</h3>
+                        </div>
+                        <div className={styles.block__text}>
+                           <p>Восстановление и реставрация аксессуаров, возвращение им прежнего вида и функциональности</p>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>

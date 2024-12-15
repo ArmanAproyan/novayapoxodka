@@ -7,7 +7,7 @@ const IsOpen = () => {
 
     useEffect(() => {
         const time = new Date().getHours();
-        if (time < 20 && time > 8) {
+        if (time < 20 && time > 11) {
             setOpen('Открыто')
         } else {
             setOpen('Закрыто')

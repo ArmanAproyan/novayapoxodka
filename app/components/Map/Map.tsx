@@ -8,11 +8,13 @@ import endpointImage from '../../assets/images/hero-bg.png';
 const MapComponent = () => {
   const mapRef = useRef<HTMLDivElement | null>(null);
 
+  const imagesSrc = ['https://spb.ros-spravka.ru/upload/iblock/77c/trk-uljnka.jpg','https://avatars.mds.yandex.net/get-altay/14209766/2a000001933056926a96e79f842cafdbd820/XXXL'];
+
 
   useEffect(() => {
     if (!mapRef.current) return;
 
-    const map = L.map(mapRef.current).setView([59.83400, 30.20472], 15);
+    const map = L.map(mapRef.current).setView([59.83400, 30.20472], 9);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; OpenStreetMap contributors',
@@ -27,14 +29,15 @@ const MapComponent = () => {
 
     const points = [
       { lat: 59.83400, lng: 30.20472, title: 'ТРК Ульянка 1 этаж новая походка', image: endpointImage },
+      { lat: 59.970092, lng: 30.405691, title: 'Ремонт ключей проспект металлистов 65', image: endpointImage}
     ];
 
-    points.forEach((point) => {
+    points.forEach((point,index) => {
       L.marker([point.lat, point.lng], { icon: customIcon })
         .addTo(map)
         .bindPopup(`
             <p>${point.title}</p>
-            <img src="https://spb.ros-spravka.ru/upload/iblock/77c/trk-uljnka.jpg" alt="Местоположение" width="200px" height="100%" />
+            <img src="${imagesSrc[index]}" alt="Местоположение" width="200px" height="100%" />
         `);
     });
 
