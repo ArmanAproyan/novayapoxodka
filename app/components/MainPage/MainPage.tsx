@@ -1,4 +1,5 @@
-'use client'
+'use client';
+
 import { Header } from '../Header/Header';
 import Main from '../main/Main';
 import { Services } from '../Services/Services';
@@ -12,11 +13,14 @@ import ReviewForm from '../ReviewForm/ReviewForm';
 import 'react-toastify/dist/ReactToastify.css';
 import SliderBlock from '../SliderBlock/SliderBlock';
 import dynamic from 'next/dynamic';
+import Head from 'next/head';
+
 const NavigateSocial = dynamic(() => import('../NavigateSocial/NavigateSocial'),{
   ssr: false
 });
 
 import styles from './style.module.scss';
+
 const MainPage = () => {
   const serviceScrollRef = useRef<null | HTMLDivElement>(null);
   const mainScrollRef = useRef<null | HTMLDivElement>(null);
@@ -35,7 +39,6 @@ const MainPage = () => {
     { name: 'beforeAfter', start: false, ref: beforeAfterScrollRef}
   ]);
 
-
   const handleScroll = (scrollName: string) => {
     const findedElement = isScrolls.find((element) => element.name === scrollName);
     const y: number | undefined = findedElement?.ref.current!.offsetTop;
@@ -45,22 +48,32 @@ const MainPage = () => {
     }
   };
 
-
-  
-
   return (
-    <div className={styles.wrapper}>
-      <Header handleScroll={handleScroll} />
-      <Main scrollRef={mainScrollRef} handleScroll={handleScroll} />
-      <Services scrollRef={serviceScrollRef} />
-      <SliderBlock scrollRef={beforeAfterScrollRef}/>
-      <AccardionAnswer/>
-      <NavigateSocial/>
-      <PriceList scrollRef={priceScrollRef} prices={priceList}/>
-      <ReviewForm scrollRef={reviewsScrollRef}/>
-      <Footer scrollRef={contactsScrollRef} />
-      <ToastContainer />
-    </div>
+    <>
+      <Head>
+        <title>Ремонт обуви и изготовление ключей | Новая Походка</title>
+        <meta name="description" content="Мы предоставляем услуги по ремонту обуви и изготовлению ключей. Работает с 11:00 до 20:00 без выходных." />
+        <meta name="robots" content="index, follow" />
+        <meta property="og:title" content="Ремонт обуви и изготовление ключей | Новая Походка" />
+        <meta property="og:description" content="Мы предоставляем услуги по ремонту обуви и изготовлению ключей. Работает с 11:00 до 20:00 без выходных." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.yoursite.com" />
+        <meta property="og:image" content="/path/to/logo.png" />
+      </Head>
+
+      <div className={styles.wrapper}>
+        <Header handleScroll={handleScroll} />
+        <Main scrollRef={mainScrollRef} handleScroll={handleScroll} />
+        <Services scrollRef={serviceScrollRef} />
+        <SliderBlock scrollRef={beforeAfterScrollRef}/>
+        <AccardionAnswer/>
+        <NavigateSocial/>
+        <PriceList scrollRef={priceScrollRef} prices={priceList}/>
+        <ReviewForm scrollRef={reviewsScrollRef}/>
+        <Footer scrollRef={contactsScrollRef} />
+        <ToastContainer />
+      </div>
+    </>
   )
 }
 

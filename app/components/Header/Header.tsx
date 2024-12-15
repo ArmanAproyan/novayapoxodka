@@ -7,6 +7,7 @@ import { IoMdClose } from "react-icons/io";
 import { Menu } from '../Menu/Menu';
 import logo from '../../assets/logo/logo.png';
 import Image from 'next/image';
+import Head from 'next/head';
 
 interface IheraderProp {
     handleScroll: (scrollName: string) => void
@@ -51,6 +52,17 @@ export const Header: React.FC<IheraderProp> = ({ handleScroll }) => {
 
     return (
         <>
+            <Head>
+                <title>Новая Походка - Главная страница</title>
+                <meta name="description" content="Добро пожаловать на сайт Новая Походка. Мы предоставляем услуги по преобразованию и уходу за обувью." />
+                <meta name="robots" content="index, follow" />
+                <meta property="og:title" content="Новая Походка - Главная страница" />
+                <meta property="og:description" content="Добро пожаловать на сайт Новая Походка. Мы предоставляем услуги по преобразованию и уходу за обувью." />
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content="https://www.yoursite.com" />
+                <meta property="og:image" content="/path/to/logo.png" />
+            </Head>
+
             <header className={`${styles.wrapper} ${isScroll || isMenuOpen ? styles.headerScroll : ""}`}>
                 <div className={`container ${styles.header}`}>
                     <div className={styles.header__logo}>

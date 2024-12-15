@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 import styles from './style.module.scss';
 
 interface IProps {
@@ -24,6 +24,16 @@ const menuItems: IMenuItem[] = [
 export const Menu = ({ isOpen, handleScroll, toggleMenu }: IProps) => {
     const modalRef = useRef<HTMLDivElement | null>(null);
 
+    useEffect(() => {
+        if (isOpen && modalRef.current) {
+            // Устанавливаем фокус на первый элемент меню при открытии
+            const firstItem = modalRef.current.querySelector('li');
+            if (firstItem) {
+                (firstItem as HTMLElement).focus();
+            }
+        }
+    }, [isOpen]);
+
     const handleItemClick = (scrollName: string) => {
         handleScroll(scrollName);
         toggleMenu();
@@ -33,6 +43,8 @@ export const Menu = ({ isOpen, handleScroll, toggleMenu }: IProps) => {
         <div
             className={`${styles.modal} ${isOpen ? styles.open : styles.close}`}
             ref={modalRef}
+            role="menu"  // Устанавливаем роль для меню
+            aria-hidden={!isOpen}  // Устанавливаем доступность для экранных читалок
         >
             {isOpen && (
                 <div className={styles.wrapper}>
@@ -43,12 +55,12 @@ export const Menu = ({ isOpen, handleScroll, toggleMenu }: IProps) => {
                                     key={item.name}
                                     className={styles.list__item}
                                     style={{ '--i': index } as React.CSSProperties}
+                                    role="menuitem"  // Роль для каждого элемента меню
+                                    tabIndex={0}  // Добавляем возможность навигации по меню с клавиатуры
+                                    onClick={() => handleItemClick(item.scrollName)}
+                                    onKeyPress={(e) => e.key === 'Enter' && handleItemClick(item.scrollName)} // Обработка клавиши Enter
                                 >
-                                    <span
-                                        onClick={() => handleItemClick(item.scrollName)}
-                                    >
-                                        {item.name}
-                                    </span>
+                                    <span>{item.name}</span>
                                 </li>
                             ))}
                         </ul>

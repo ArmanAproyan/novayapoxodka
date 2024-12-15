@@ -1,15 +1,18 @@
 'use client';
+
 import { useEffect, useRef } from 'react';
 import L from 'leaflet';
-import styles from './style.module.scss'
+import styles from './style.module.scss';
 import 'leaflet/dist/leaflet.css';
 import endpointImage from '../../assets/images/hero-bg.png';
 
 const MapComponent = () => {
   const mapRef = useRef<HTMLDivElement | null>(null);
 
-  const imagesSrc = ['https://spb.ros-spravka.ru/upload/iblock/77c/trk-uljnka.jpg','https://avatars.mds.yandex.net/get-altay/14209766/2a000001933056926a96e79f842cafdbd820/XXXL'];
-
+  const imagesSrc = [
+    'https://spb.ros-spravka.ru/upload/iblock/77c/trk-uljnka.jpg',
+    'https://avatars.mds.yandex.net/get-altay/14209766/2a000001933056926a96e79f842cafdbd820/XXXL',
+  ];
 
   useEffect(() => {
     if (!mapRef.current) return;
@@ -29,10 +32,10 @@ const MapComponent = () => {
 
     const points = [
       { lat: 59.83400, lng: 30.20472, title: 'ТРК Ульянка 1 этаж левое крыло', image: endpointImage },
-      { lat: 59.970092, lng: 30.405691, title: 'Ремонт ключей проспект металлистов 65', image: endpointImage}
+      { lat: 59.970092, lng: 30.405691, title: 'Ремонт ключей проспект металлистов 65', image: endpointImage },
     ];
 
-    points.forEach((point,index) => {
+    points.forEach((point, index) => {
       L.marker([point.lat, point.lng], { icon: customIcon })
         .addTo(map)
         .bindPopup(`
@@ -48,9 +51,13 @@ const MapComponent = () => {
 
   return (
     <div className={styles.block}>
-      <h1 className={styles.text}>Местополжение</h1>
+      <h1 className={styles.text}>Местоположение</h1>
       <div className={styles.map}>
-        <div ref={mapRef} style={{ height: '400px', width: '100%' }} />
+        <div
+          ref={mapRef}
+          style={{ height: '400px', width: '100%' }}
+          aria-label="Карта с местоположением точек"
+        />
       </div>
     </div>
   );
