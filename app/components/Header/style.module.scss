@@ -24,7 +24,7 @@
     padding-bottom: 3px;
 
     .logo__img {
-        width: 100px;
+        width: 85px;
         transition: 0.2s;
 
         &:hover {
@@ -48,12 +48,9 @@
 
 
 .logo__img {
-    width: 100px;
+    width: 102px;
     transition: 0.2s;
-
-    &:hover {
-        width: 102px;
-    }
+   
 }
 
 .menu__list {
@@ -79,38 +76,31 @@
 }
 
 
-
-@media (max-width:vars.$large-size) {
+@media (max-width: 1200px) {
     .logo__img {
-        width: 80px;
-    }
-
-    .list__item {
-        font-size: 0.8rem;
-    }
-
-    .logo__img {
-        width: 80px;
-        height: 70px;
-    }
-
-    .logo__text {
-        font-size: 15px;
+        width: 100px;
     }
 }
 
-@media (max-width:vars.$small-size) {
 
-    .logo__img {
-        width: 60px;
-        height: 50px;
+
+@media (max-width:vars.$large-size) {
+    .list__item {
+        font-size: 0.8rem;
     }
-
     .logo__text {
         font-size: 11px;
     }
 }
 
-@media (max-width: 375px) {
+@media (max-width:575px) {
 
+    .logo__img {
+        width: 85px;
+        height: 50px;
+    }
+
+    .logo__text {
+        font-size: 8px;
+    }
 }

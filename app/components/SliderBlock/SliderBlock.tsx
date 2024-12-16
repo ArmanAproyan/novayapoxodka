@@ -19,7 +19,7 @@ const SliderBlock: React.FC<IsliderBlockProp> = ({scrollRef}) => {
     return (
         <div ref={scrollRef} className={styles.container}>
             <div className={styles.text_block}>
-                <h1>Наши работы</h1>
+                <h1 style={{textTransform: 'uppercase'}}>Наши работы</h1>
                 <span>Перетащите ползунок влево или вправо, чтобы увидеть результат "до" и "после"</span>
             </div>
             <Slider before={before4.src} after={after4.src}/>

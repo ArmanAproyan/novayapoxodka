@@ -42,7 +42,7 @@ export const Services: React.FC<IservicesProp> = ({ scrollRef }) => {
         <section ref={scrollRef} className={styles.wrapper}>
             <div className={`container ${styles.services}`}>
                 <div className={styles.services__text}>
-                    <h2 className={`title ${styles.text__title}`}>Наши услуги</h2>
+                    <h2 style={{textTransform: 'uppercase'}} className={`title ${styles.text__title}`}>Наши услуги</h2>
                     <p className={`subtitle ${styles.text__subtitle}`}>
                         Мы предлагаем: ремонт обуви, чистку и полировку, изготовление и ремонт ключей.
                     </p>

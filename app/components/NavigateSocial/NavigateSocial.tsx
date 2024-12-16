@@ -4,7 +4,9 @@ import Box from '@mui/material/Box';
 import SpeedDial, { SpeedDialProps } from '@mui/material/SpeedDial';
 import { useState } from 'react';
 import SpeedDialAction from '@mui/material/SpeedDialAction';
-import { FaWhatsapp, FaTelegramPlane, FaViber } from "react-icons/fa";
+import { FaWhatsapp, FaViber } from "react-icons/fa";
+import { MdOutlineAlternateEmail } from "react-icons/md";
+
 
 const StyledSpeedDial = styled(SpeedDial)(({ theme }) => ({
   position: 'absolute',
@@ -18,14 +20,22 @@ const StyledSpeedDial = styled(SpeedDial)(({ theme }) => ({
   },
   '& .MuiSpeedDial-fab': {
     backgroundColor: 'green',
-    color: 'white', 
+    color: 'white',
   }
 }));
 
+
+const navigationSocial = {
+  whatsapp: 'https://wa.me/79112760414',
+  viber: 'viber://chat?number=79112760414',
+  email: 'mailto:aaproyan@bk.ru'
+};
+
+
 const actions = [
   { icon: <FaWhatsapp style={{ fontSize: '30px', color: 'green' }} />, name: 'Whatsapp' },
-  { icon: <FaTelegramPlane style={{ fontSize: '30px', color: 'blue' }} />, name: 'Telegram' },
-  { icon: <FaViber style={{ fontSize: '30px', color: 'purple' }} />, name: 'Viber' }
+  { icon: <FaViber style={{ fontSize: '30px', color: 'purple' }} />, name: 'Viber' },
+  { icon: <MdOutlineAlternateEmail style={{fontSize: '30px', color: 'blue'}}/>, name: 'email'}
 ];
 
 const NavigateSocial = () => {
@@ -40,10 +50,13 @@ const NavigateSocial = () => {
 
   const handleNavigate = (name: string) => {
     if (name == 'Whatsapp') {
-      window.location.href = 'https://wa.me/+7911276-04-14?text=%D0%97%D0%B4%D1%80%D0%B0%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%20%D1%85%D0%BE%D1%87%D1%83%20%D1%81%D0%BF%D1%80%D0%BE%D1%81%D0%B8%D1%82%D1%8C';
+      window.location.href = navigationSocial.whatsapp;
     }
     if (name == 'Viber') {
-      window.location.href = 'viber://chat?number=%2B37477224095';
+      window.location.href = navigationSocial.viber;
+    }
+    if(name == 'email') {
+      window.location.href = navigationSocial.email
     }
   };
 
@@ -54,7 +67,7 @@ const NavigateSocial = () => {
           <StyledSpeedDial
             ariaLabel="SpeedDial playground example"
             hidden={hidden}
-            icon={<FaWhatsapp style={{ fontSize: '40px' }} />} 
+            icon={<FaWhatsapp style={{ fontSize: '40px' }} />}
             direction={direction}
           >
             {actions.map((action) => (

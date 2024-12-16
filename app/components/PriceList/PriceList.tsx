@@ -11,7 +11,7 @@ interface IpriceListProp {
 const PriceList: React.FC<IpriceListProp> = ({ prices, scrollRef }) => {
   return (
     <div ref={scrollRef} className={styles.tableContainer}>
-      <h1 className={styles.title}>Наши Цены</h1>
+      <h1 className={styles.title}>Прейскурант на услуги по ремонту обуви</h1>
       <table className={styles.table}>
         <thead>
           <tr>

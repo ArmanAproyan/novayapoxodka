@@ -15,11 +15,17 @@ const Footer: React.FC<IfooterProp> = ({ scrollRef }) => {
 
     const [isCopied, setIsCopied] = React.useState<boolean>(false);
 
+
+    const navigation = {
+        facebook: 'https://www.facebook.com/vahagn.stepanyan.37?locale=ru_RU',
+        instagram: 'https://www.instagram.com/stepanyan_vahagn/'
+    };
+
     const handleCopy = () => {
         navigator.clipboard.writeText('+7 (911) 276-04-14')
             .then(() => {
                 setIsCopied(true);
-                toast.success('Номер скопирован!', { position: "top-right" });
+                toast.success('Номер скопирован!', { position: "top-right", autoClose: 1200 });
             })
             .catch((err) => console.error('Ошибка копирования: ', err));
     };
@@ -49,7 +55,6 @@ const Footer: React.FC<IfooterProp> = ({ scrollRef }) => {
 
     return (
         <>
-            {/* Мета-теги для SEO */}
             <Head>
                 <title>Контакты - Новая Походка</title>
                 <meta name="description" content="Контакты и адрес компании Новая Походка. Узнайте, как с нами связаться." />
@@ -66,11 +71,9 @@ const Footer: React.FC<IfooterProp> = ({ scrollRef }) => {
                     <div className={styles.footer__section}>
                         <h4 className={styles.footer__title}>Адрес</h4>
                         <p className={styles.footer__text}>
-                            Санкт-Петербург, ул.12/4
+                            Проспект Ветеранов, 101, 1 этаж, левое крыло
                             <br />
-                            Санкт-Петербург, ул.16/2
-                            <br />
-                            Санкт-Петербург, ул.15
+                            Проспект Металлистов, 65
                         </p>
                     </div>
                     <div className={styles.footer__section}>
@@ -89,9 +92,8 @@ const Footer: React.FC<IfooterProp> = ({ scrollRef }) => {
                     <div className={styles.footer__section}>
                         <h4 className={styles.footer__title}>Следите за нами</h4>
                         <div className={styles.footer__socials}>
-                            <a href="https://www.facebook.com/yourprofile" className={styles.footer__link} target="_blank" rel="noopener noreferrer">Facebook</a>
-                            <a href="https://www.twitter.com/yourprofile" className={styles.footer__link} target="_blank" rel="noopener noreferrer">Twitter</a>
-                            <a href="https://www.instagram.com/yourprofile" className={styles.footer__link} target="_blank" rel="noopener noreferrer">Instagram</a>
+                            <a href={navigation.facebook} className={styles.footer__link} target="_blank" rel="noopener noreferrer">Facebook</a>
+                            <a href={navigation.instagram} className={styles.footer__link} target="_blank" rel="noopener noreferrer">Instagram</a>
                         </div>
                     </div>
                 </div>

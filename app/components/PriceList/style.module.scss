@@ -1,3 +1,4 @@
+@use '../../styles/variables.scss' as vars;
 .tableContainer {
     padding: 20px;
     background-color: #f9f9f9;
@@ -9,6 +10,8 @@
     font-size: 24px;
     margin-bottom: 20px;
     text-align: center;
+    color: vars.$dark-color;
+    text-transform: uppercase;
   }
   
   .table {
