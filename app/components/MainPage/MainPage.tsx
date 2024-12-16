@@ -66,9 +66,9 @@ const MainPage = () => {
         <Main scrollRef={mainScrollRef} handleScroll={handleScroll} />
         <Services scrollRef={serviceScrollRef} />
         <SliderBlock scrollRef={beforeAfterScrollRef}/>
-        <AccardionAnswer/>
         <NavigateSocial/>
         <PriceList scrollRef={priceScrollRef} prices={priceList}/>
+        <AccardionAnswer/>
         <ReviewForm scrollRef={reviewsScrollRef}/>
         <Footer scrollRef={contactsScrollRef} />
         <ToastContainer />
