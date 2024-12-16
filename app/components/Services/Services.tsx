@@ -4,6 +4,8 @@ import { PiBoot } from "react-icons/pi";
 import { MdOutlineCleanHands } from "react-icons/md";
 import { FaKeycdn } from "react-icons/fa";
 import { IoBagOutline } from "react-icons/io5";
+import { PiCarBattery } from "react-icons/pi";
+import { GiBeltArmor } from "react-icons/gi";
 
 interface IservicesProp {
     scrollRef: React.RefObject<HTMLDivElement>;
@@ -34,6 +36,16 @@ const servicesData = [
         icon: <IoBagOutline fontSize={'70px'} />,
         title: 'Ремонт сумок и чемоданов',
         description: 'Восстановление и реставрация аксессуаров, возвращение им прежнего вида и функциональности.',
+    },
+    {
+        icon: <PiCarBattery fontSize={'70px'} />,
+        title: 'Замена батареек',
+        description: 'Предлагаем услугу Замена батареек.',
+    },
+    {
+        icon: <GiBeltArmor fontSize={'70px'} />,
+        title: 'Замена ремешков на часах',
+        description: 'Замена ремешков на часах для восстановления их внешнего вида и удобства ношения.',
     }
 ];
 
@@ -44,7 +56,7 @@ export const Services: React.FC<IservicesProp> = ({ scrollRef }) => {
                 <div className={styles.services__text}>
                     <h2 style={{textTransform: 'uppercase'}} className={`title ${styles.text__title}`}>Наши услуги</h2>
                     <p className={`subtitle ${styles.text__subtitle}`}>
-                        Мы предлагаем: ремонт обуви, чистку и полировку, изготовление и ремонт ключей.
+                        Мы предлагаем: ремонт обуви, Химчистка и покраска обуви, Изготовление ключей, Ремонт сумок и чемоданов, Замена батареек,Замена ремешков на часах.
                     </p>
                 </div>
 
