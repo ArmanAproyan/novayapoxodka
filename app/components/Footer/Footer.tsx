@@ -79,7 +79,7 @@ const Footer: React.FC<IfooterProp> = ({ scrollRef }) => {
                     <div className={styles.footer__section}>
                         <h4 className={styles.footer__title}>Контакты</h4>
                         <ul className={styles.footer__list}>
-                            <li className={styles.footer__item}>Email: armanaproyan114@gmai.com</li>
+                            <li className={styles.footer__item}>Email: vaag-vaag@mail.ru</li>
                             <li onClick={handleCopy} className={styles.footer__item}>
                                 Телефон: +7 (911) 276-04-14 <FaRegCopy />
                             </li>

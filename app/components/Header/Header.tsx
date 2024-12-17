@@ -69,8 +69,8 @@ export const Header: React.FC<IheraderProp> = ({ handleScroll }) => {
                         <h2 style={{ color: 'white' }} onClick={() => handleScroll('main')}>
                             <div className={styles.header__logo}>
                                 <Image
-                                    width={120}
-                                    height={60}
+                                    width={58}
+                                    height={50}
                                     alt="Logo"
                                     src={logo}
                                     className={styles.logo__img}

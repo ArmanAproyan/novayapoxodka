@@ -22,7 +22,7 @@ const ReviewForm: React.FC<IreviewsProp> = ({ scrollRef }) => {
   }, [showMore]);
 
   const clickToWriteReview = () => {
-    window.location.href = 'mailto:aaproyan@bk.ru';
+    window.location.href = 'mailto:vaag-vaag@mail.ru';
   };
 
   const handleChangeShowMore = () => {

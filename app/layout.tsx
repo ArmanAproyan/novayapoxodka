@@ -1,26 +1,32 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import MainPage from "./components/MainPage/MainPage";
+import logo from './assets/images/logo.png'
 
 
 export const metadata: Metadata = {
-  title: "Ремонт обуви и ключей Новая-Походка — Качество и надежность",
+  title: "Новая-Походка",
   description:
     "Новая Походка — Профессиональный ремонт обуви и ключей в вашем районе. Чистка, реставрация и качественное обслуживание обуви. Доверяйте мастерам с опытом!",
   keywords: [
-    "ремонт обуви",
-    "ремонт ключей",
-    "чистка обуви",
-    "реставрация обуви",
-    "мастерская по ремонту обуви",
-    "ремонт обуви и ключей",
-    "домофон",
-    "ключи для домофона",
-    "сайт ремонт обуви",
-    "сайт ремонт ключей"
-  ],
+      'Новая Походка',
+      'новая походка',
+      'новаяпоходка',
+      "ремонт обуви",
+      'химчистка обуви',
+      'реставрация обуви', 
+      "изготовление ключей",
+      "чистка обуви",
+      "мастерская по ремонту обуви",
+      "ремонт обуви и ключей",
+      "домофон",
+      "ключи для домофона",
+      "сайт ремонт обуви",
+      "сайт ремонт ключей"
+    ],
+    
   openGraph: {
-    title: "Ремонт обуви и ключей Новая-Походка",
+    title: "обуви и ключей Новая-Походка",
     description:
       "Ищете качественный ремонт обуви и ключей? Новая Походка предлагает профессиональное обслуживание и реставрацию обуви в кратчайшие сроки!",
     url: "https://yourwebsite.com",
@@ -30,14 +36,14 @@ export const metadata: Metadata = {
         url: "/images/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Мастерская Новая Походка — ремонт обуви и ключей",
+        alt: "Новая-Походка Ремонт и реставрация обуви, изготовлен",
       },
     ],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ремонт обуви и ключей Новая-Походка",
+    title: "Новая-Походка Ремонт и реставрация обуви, изготовление ",
     description:
       "Профессиональный ремонт обуви, реставрация и чистка. Доверяйте мастерам Новая Походка!",
     images: ["/images/og-image.jpg"],
@@ -58,7 +64,8 @@ export default function RootLayout({
           <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet" />
           <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
       </head>
-      <body>
+      <body> 
+
         <MainPage />
         {children}
       </body>
