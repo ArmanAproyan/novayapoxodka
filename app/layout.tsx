@@ -42,6 +42,18 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <head>
+      <meta name="robots" content="index, follow" />
+      <meta name="author" content="Новая походка"/>
+      <meta name="description" content="Ремонт обуви, реставрация, изготовление ключей и другие услуги в Санкт-Петербурге. Высокое качество и доступные цены. Новая Походка — ваш мастер по ремонту обуви!" />
+      <meta property="og:title" content="Новая Походка — Ремонт и Реставрация Обуви Изготовление ключей"/>
+      <meta property="og:description" content="Качественный ремонт обуви и изготовление ключей в Санкт-Петербурге. Обращайтесь в Новую Походку для реставрации и ремонта обуви." />
+      <meta property="og:image" content="https://example.com/path-to-image.jpg" />
+      <title>Новая Походка — Ремонт и Реставрация Обуви, Изготовление Ключей в Санкт-Петербурге</title>
+      <meta property="og:url" content="https://novayapoxodka.ru"/>
+      <meta property="og:type" content="website" />
+      <meta name="geo.region" content="RU-SPE" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="geo.placename" content="Санкт-Петербург" />
         <link
           href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap"
           rel="stylesheet"
