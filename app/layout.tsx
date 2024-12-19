@@ -5,12 +5,12 @@ import MainPage from "./components/MainPage/MainPage";
 export const metadata: Metadata = {
   title: "Новая-Походка",
   description:
-    "Новая Походка — Профессиональный ремонт  обуви и ключей в вашем районе. Чистка, реставрация и качественное обслуживание обуви. Доверяйте мастерам с опытом!",
+    "Новая Походка — Профессиональный ремонт и реставрация обуви изготовление ключей. Чистка, реставрация и качественное обслуживание обуви. Доверяйте мастерам с опытом!",
   openGraph: {
-    title: "Новая-Походка: ремонт обуви и ключей",
+    title: "Новая Походка Ремонт и реставрация обуви, изготовление ключей",
     description:
       "Ищете качественный ремонт обуви и ключей? Новая Походка предлагает профессиональное обслуживание и реставрацию обуви в кратчайшие сроки!",
-    url: "https://novaya-pohodka.ru",
+    url: "https://novayapoxodka.ru",
     siteName: "Новая Походка Ремонт и реставрация обуви, изготовление ключей",
     images: [
       {
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     images: ["/images/og-image.jpg"],
   },
   alternates: {
-    canonical: "https://yourwebsite.com",
+    canonical: "https://novayapoxodka.ru",
   },
 };
 
@@ -50,8 +50,6 @@ export default function RootLayout({
           rel="stylesheet"
           href="https://unpkg.com/swiper/swiper-bundle.min.css"
         />
-        <meta name="yandex-verification" content="8ff9267b87e751da" />
-        <meta httpEquiv="Content-Type" content="text/html; charset=UTF-8" />
       </head>
       <body>
         <MainPage />
