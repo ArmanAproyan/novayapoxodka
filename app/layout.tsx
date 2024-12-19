@@ -1,49 +1,30 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import MainPage from "./components/MainPage/MainPage";
-import logo from './assets/images/logo.png'
-
 
 export const metadata: Metadata = {
   title: "Новая-Походка",
   description:
-    "Новая Походка — Профессиональный ремонт обуви и ключей в вашем районе. Чистка, реставрация и качественное обслуживание обуви. Доверяйте мастерам с опытом!",
-  keywords: [
-      'Новая Походка',
-      'новая походка',
-      'новаяпоходка',
-      "ремонт обуви",
-      'химчистка обуви',
-      'реставрация обуви', 
-      "изготовление ключей",
-      "чистка обуви",
-      "мастерская по ремонту обуви",
-      "ремонт обуви и ключей",
-      "домофон",
-      "ключи для домофона",
-      "сайт ремонт обуви",
-      "сайт ремонт ключей"
-    ],
-    
+    "Новая Походка — Профессиональный ремонт  обуви и ключей в вашем районе. Чистка, реставрация и качественное обслуживание обуви. Доверяйте мастерам с опытом!",
   openGraph: {
-    title: "обуви и ключей Новая-Походка",
+    title: "Новая-Походка: ремонт обуви и ключей",
     description:
       "Ищете качественный ремонт обуви и ключей? Новая Походка предлагает профессиональное обслуживание и реставрацию обуви в кратчайшие сроки!",
-    url: "https://yourwebsite.com",
-    siteName: "Новая Походка",
+    url: "https://novaya-pohodka.ru",
+    siteName: "Новая Походка Ремонт и реставрация обуви, изготовление ключей",
     images: [
       {
         url: "/images/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Новая-Походка Ремонт и реставрация обуви, изготовлен",
+        alt: "Новая-Походка: ремонт и реставрация обуви, изготовление ключе",
       },
     ],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Новая-Походка Ремонт и реставрация обуви, изготовление ",
+    title: "Новая-Походка: ремонт обуви и ключей",
     description:
       "Профессиональный ремонт обуви, реставрация и чистка. Доверяйте мастерам Новая Походка!",
     images: ["/images/og-image.jpg"],
@@ -59,13 +40,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="ru">
       <head>
-          <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet" />
-          <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap"
+          rel="stylesheet"
+        />
+        <link
+          rel="stylesheet"
+          href="https://unpkg.com/swiper/swiper-bundle.min.css"
+        />
+        <meta name="yandex-verification" content="8ff9267b87e751da" />
+        <meta httpEquiv="Content-Type" content="text/html; charset=UTF-8" />
       </head>
-      <body> 
-
+      <body>
         <MainPage />
         {children}
       </body>
