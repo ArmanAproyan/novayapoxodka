@@ -3,6 +3,7 @@ interface Iacardion {
     answer: string;
   }
   
+  
   export const acardionAnswerInfo: Iacardion[] = [
     {
       question: "Как долго длится ремонт ключа?",
