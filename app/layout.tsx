@@ -39,6 +39,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="ru">
       <head>
       <title>Новая Походка — Ремонт и Реставрация Обуви, Изготовление Ключей в Санкт-Петербурге</title>
+      <meta name="yandex-verification" content="d1723de03ccf8c01" />
       <meta name="robots" content="index, follow" />
       <meta name="author" content="Новая походка"/>
       <meta name="description" content="Ремонт обуви, реставрация, изготовление ключей и другие услуги в Санкт-Петербурге. Высокое качество и доступные цены. Новая Походка — ваш мастер по ремонту обуви!" />
@@ -50,7 +51,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <meta name="geo.region" content="RU-SPE" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta name="geo.placename" content="Санкт-Петербург" />
-      <meta name="yandex-verification" content="d1723de03ccf8c01" />
         <link
           href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap"
           rel="stylesheet"
