@@ -44,7 +44,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <meta name="description" content="Ремонт обуви, реставрация, изготовление ключей и другие услуги в Санкт-Петербурге. Высокое качество и доступные цены. Новая Походка — ваш мастер по ремонту обуви!" />
       <meta property="og:title" content="Новая Походка — Ремонт и Реставрация Обуви Изготовление ключей"/>
       <meta property="og:description" content="Качественный ремонт обуви и изготовление ключей в Санкт-Петербурге. Обращайтесь в Новую Походку для реставрации и ремонта обуви." />
-      <meta property="og:image" content="./favicon.ico" />
+      <meta property="og:image" content="https://novayapoxodka.ru/favicon.ico" />
       <meta property="og:url" content="https://novayapoxodka.ru"/>
       <meta property="og:type" content="website" />
       <meta name="geo.region" content="RU-SPE" />
