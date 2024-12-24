@@ -22,6 +22,7 @@
     align-items: center;
     gap: 20px;
     cursor: pointer;
+    padding-top: 6px;
     padding-bottom: 3px;
 
     .logo__img {
@@ -105,6 +106,6 @@
     }
 
     .logo__text {
-        font-size: 8px;
+        font-size: 12px;
     }
 }
