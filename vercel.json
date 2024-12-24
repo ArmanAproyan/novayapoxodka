@@ -1,8 +1,14 @@
 {
   "redirects": [
     {
-      "source": "/:path((?!_next|static|images|favicon.ico).*)",
-      "destination": "https://novayapoxodka.ru/",
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "novayapoxodka.ru"
+        }
+      ],
+      "destination": "https://novayapoxodka.ru/:path*",
       "permanent": true
     }
   ]
