@@ -2,7 +2,7 @@
   "redirects": [
     {
       "source": "/:path((?!_next|static|images|favicon.ico).*)",
-      "destination": "https://novayapoxodka.ru/:path*",
+      "destination": "https://novayapoxodka.ru/",
       "permanent": true
     }
   ]
