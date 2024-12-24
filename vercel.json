@@ -1,9 +1,9 @@
 {
-    "redirects": [
-      {
-        "source": "/:path*",
-        "destination": "https://novayapoxodka.ru",
-        "permanent": true
-      }
-    ]
-  }
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "https://novayapoxodka.ru",
+      "permanent": true
+    }
+  ]
+}
