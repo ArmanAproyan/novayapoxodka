@@ -14,7 +14,6 @@ import 'react-toastify/dist/ReactToastify.css';
 import SliderBlock from '../SliderBlock/SliderBlock';
 import dynamic from 'next/dynamic';
 import Head from 'next/head';
-import favicone from '../../favicon.ico';
 
 const NavigateSocial = dynamic(() => import('../NavigateSocial/NavigateSocial'));
 
@@ -51,7 +50,7 @@ const MainPage = () => {
     <>
       <Head>
         <title>Ремонт обуви и изготовление ключей | Новая Походка</title>
-        <link rel="icon" href={favicone.src} />
+        <link rel="icon" href="/favicon.ico" />
         <meta
           name="description"
           content="Мы предоставляем услуги по ремонту обуви и изготовлению ключей. Работает с 11:00 до 20:00 без выходных."
