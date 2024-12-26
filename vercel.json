@@ -5,10 +5,21 @@
       "has": [
         {
           "type": "host",
+          "value": "novayapoxodka.vercel.app"
+        }
+      ],
+      "destination": "https://www.novayapoxodka.ru/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
           "value": "novayapoxodka.ru"
         }
       ],
-      "destination": "https://novayapoxodka.ru/:path*",
+      "destination": "https://www.novayapoxodka.ru/:path*",
       "permanent": true
     }
   ]
