@@ -12,8 +12,8 @@ import before5 from '../../assets/sliderImages/before5.jpg'
 import after5 from '../../assets/sliderImages/after5.jpg'
 import before6 from '../../assets/sliderImages/before6.jpg'
 import after6 from '../../assets/sliderImages/after6.jpg'
-import before7 from '../../assets/sliderImages/before7.png'
-import after7 from '../../assets/sliderImages/after7.png'
+import before7 from '../../assets/sliderImages/before7.jpg'
+import after7 from '../../assets/sliderImages/after7.jpg'
 import before8 from '../../assets/sliderImages/before8.jpg'
 import after8 from '../../assets/sliderImages/after8.jpg'
 import before9 from '../../assets/sliderImages/before9.jpg'
@@ -32,6 +32,8 @@ import before15 from '../../assets/sliderImages/before15.jpg'
 import after15 from '../../assets/sliderImages/after15.jpg'
 import before16 from '../../assets/sliderImages/before16.jpg'
 import after16 from '../../assets/sliderImages/after16.jpg'
+import before17 from '../../assets/sliderImages/before17.jpg';
+import after17 from '../../assets/sliderImages/after17.jpg';
 import React from 'react';
 
 interface IsliderBlockProp {
@@ -45,7 +47,7 @@ const sliderImages = [
     {before: before3.src, after: after3.src},
     {before: before5.src, after: after5.src},
     {before: before6.src, after: after6.src},
-    // {before: before7.src, after: after7.src},
+    {before: before7.src, after: after7.src},
     {before: before8.src, after: after8.src},
     {before: before9.src, after: after9.src},
     {before: before10.src, after: after10.src},
@@ -54,7 +56,9 @@ const sliderImages = [
     {before: before13.src, after: after13.src},
     {before: before14.src, after: after14.src},
     {before: before15.src, after: after15.src},
-    {before: before16.src, after: after16.src}
+    {before: before16.src, after: after16.src},
+    {before: before17.src, after: after17.src}
+
 
 ]
 
