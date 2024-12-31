@@ -25,7 +25,7 @@ const AccardionAnswer = () => {
 
       <div className={styles.container}>
         <div className={styles.container__text_block}>
-            <h1 style={{fontSize: '1.4rem', textTransform: 'uppercase'}}>Часто задаваемые вопросы</h1>
+            <h1 style={{fontSize: '1.6rem', textTransform: 'uppercase'}}>Часто задаваемые вопросы</h1>
         </div>
         {acardionAnswerInfo.map((val, index) => {
             return (
@@ -33,8 +33,8 @@ const AccardionAnswer = () => {
                   <Accordion>
                     <AccordionSummary
                       expandIcon={<FaArrowDown />}
-                      aria-controls={`panel${index}-content`}  // Улучшение доступности
-                      id={`panel${index}-header`}  // Улучшение доступности
+                      aria-controls={`panel${index}-content`}  
+                      id={`panel${index}-header`}  
                     >
                       <span className={styles.question_text}>{val.question}</span>
                     </AccordionSummary>

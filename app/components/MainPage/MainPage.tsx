@@ -14,6 +14,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import SliderBlock from '../SliderBlock/SliderBlock';
 import dynamic from 'next/dynamic';
 import Head from 'next/head';
+import VideoPlayer from '../VideoPlayer/VideoPlayer';
 
 const NavigateSocial = dynamic(() => import('../NavigateSocial/NavigateSocial'));
 
@@ -80,6 +81,7 @@ const MainPage = () => {
         <NavigateSocial />
         <PriceList scrollRef={priceScrollRef} prices={priceList} />
         <AccardionAnswer />
+        <VideoPlayer/>
         <ReviewForm scrollRef={reviewsScrollRef} />
         <Footer scrollRef={contactsScrollRef} />
         <ToastContainer />
