@@ -30,7 +30,7 @@
 
 .player {
   width: 100%;
-  max-width: 720px; /* Ограничение для больших экранов */
+  max-width: 720px;
 }
 
 @media (max-width: 1420px) {
@@ -48,8 +48,7 @@
 }
 
 @media (max-width: 500px) {
-
   .player {
-    width: 90% !important;
+    width: 100% !important;
   }
 }
