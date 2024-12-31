@@ -81,7 +81,7 @@ const MainPage = () => {
         <NavigateSocial />
         <PriceList scrollRef={priceScrollRef} prices={priceList} />
         <AccardionAnswer />
-        <VideoPlayer/>
+        {/* <VideoPlayer/> */}
         <ReviewForm scrollRef={reviewsScrollRef} />
         <Footer scrollRef={contactsScrollRef} />
         <ToastContainer />
