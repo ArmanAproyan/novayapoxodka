@@ -15,7 +15,6 @@ const VideoPlayer: React.FC = () => {
           className={styles.player}
           url="https://www.youtube.com/watch?v=4cYwwam1QjA"
           controls
-          playing
           width="100%"
           height="100%"
         />
