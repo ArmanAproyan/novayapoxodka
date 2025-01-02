@@ -31,7 +31,11 @@ const Main: React.FC<IheroProp> = ({ scrollRef, handleScroll }) => {
                 <section ref={scrollRef} className={`container ${styles.hero}`}>
                     <div className={styles.hero__content}>
                         <h1 className={styles.hero__title}>Ремонт и реставрация обуви, изготовление ключей</h1>
-                        <p className={styles.hero__subtitle}>График работы с 11:00 до 20:00 без выходных</p>
+                        {/* <p className={styles.hero__subtitle}>График работы</p> */}
+                        <p className={styles.hero__subtitle}>Проспект Ветеранов 11:00 - 20:00 без выходных</p>
+                        <p className={styles.hero__subtitle}>Проспект Металлистов 10:00 - 19:00</p>
+
+
 
                         <div className={styles.hero_isOpen}>
                             <IsOpen />
