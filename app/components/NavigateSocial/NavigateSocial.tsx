@@ -27,7 +27,7 @@ const StyledSpeedDial = styled(SpeedDial)(({ theme }) => ({
 
 const navigationSocial = {
   whatsapp: 'https://wa.me/79112760414',
-  viber: 'viber://chat?number=79112760414',
+  viber: 'viber://chat?number=%2B79112760414',
   email: 'mailto:vaag-vaag@mail.ru'
 };
 

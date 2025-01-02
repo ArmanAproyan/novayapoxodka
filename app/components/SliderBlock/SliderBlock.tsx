@@ -59,7 +59,6 @@ const sliderImages = [
     {before: before16.src, after: after16.src},
     {before: before17.src, after: after17.src}
 
-
 ]
 
 

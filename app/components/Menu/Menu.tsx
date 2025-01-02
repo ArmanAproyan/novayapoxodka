@@ -25,8 +25,9 @@ export const Menu = ({ isOpen, handleScroll, toggleMenu }: IProps) => {
     const modalRef = useRef<HTMLDivElement | null>(null);
 
     useEffect(() => {
+
+
         if (isOpen && modalRef.current) {
-            // Устанавливаем фокус на первый элемент меню при открытии
             const firstItem = modalRef.current.querySelector('li');
             if (firstItem) {
                 (firstItem as HTMLElement).focus();

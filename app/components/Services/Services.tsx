@@ -54,10 +54,13 @@ export const Services: React.FC<IservicesProp> = ({ scrollRef }) => {
         <section ref={scrollRef} className={styles.wrapper}>
             <div className={`container ${styles.services}`}>
                 <div className={styles.services__text}>
-                    <h2 style={{textTransform: 'uppercase'}} className={`title ${styles.text__title}`}>Наши услуги</h2>
-                    <p className={`subtitle ${styles.text__subtitle}`}>
-                        Мы предлагаем: ремонт обуви, Химчистка и покраска обуви, Изготовление ключей, Ремонт сумок и чемоданов, Замена батареек,Замена ремешков на часах.
-                    </p>
+                    <h2 style={{ textTransform: 'uppercase' }} className={`title ${styles.text__title}`}>Наши услуги</h2>
+                    <div className={styles.subtitle_wrapper}>
+                        <p className={`subtitle ${styles.text__subtitle}`}>
+                            Мы предлагаем: ремонт обуви, Химчистка и покраска обуви, Изготовление ключей, Ремонт сумок и чемоданов, Замена батареек,Замена ремешков на часах.
+                        </p>
+                    </div>
+
                 </div>
 
                 <div className={styles.services__info}>

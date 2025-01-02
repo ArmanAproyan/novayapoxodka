@@ -13,7 +13,7 @@ const VideoPlayer: React.FC = () => {
       <div className={styles.playerWrapper}>
         <ReactPlayer
           className={styles.player}
-          url="https://www.youtube.com/watch?v=4cYwwam1QjA"
+          url="https://www.youtube.com/watch?v=sFYuUpWQWzE"
           controls
           width="100%"
           height="100%"

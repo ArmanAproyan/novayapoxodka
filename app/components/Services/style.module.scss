@@ -16,11 +16,19 @@
     gap: 150px;
 }
 .services__text{
-    width: 50%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
+    text-align: center;
+}
+
+.subtitle_wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
 }
 
@@ -42,7 +50,6 @@
 .block__header {
     text-align: center;
     height: 130px;
-    margin-bottom: 10px;
     & > .header__icon{
         & > img {
             width: 70px;
@@ -86,9 +93,6 @@
 
 
 @media (max-width:vars.$medium_size) {
-    .services__text {
-        width: 70%;
-    }
     .services{
         gap: 100px;
     }
