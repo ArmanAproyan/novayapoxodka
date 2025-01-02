@@ -98,7 +98,7 @@ const Footer: React.FC<IfooterProp> = ({ scrollRef }) => {
                     </div>
                 </div>
                 <div className={styles.footer__copyright}>
-                    &copy; 2024 Все права защищены.
+                    &copy; 2025 Все права защищены.
                 </div>
             </footer>
         </>
