@@ -39,27 +39,6 @@ const MainPage = () => {
   ]);
 
 
-  useEffect(() => {
-    console.log('mounth')
-    sendNotifiacation()
-  },[])
-
-
-  const sendNotifiacation = () => {
-    if (Notification.permission === 'granted') {
-      const notification = new Notification('"Не выбрасывайте старые туфли или сумки — доверьтесь мастерам «Новой Походки»!"');
-    } else if (Notification.permission !== 'denied') { 
-      Notification.requestPermission().then((permission) => {
-        if (permission === 'granted') {
-          const notification = new Notification('"Не выбрасывайте старые туфли или сумки — доверьтесь мастерам «Новой Походки»!"');
-        }
-      });
-    }
-    
-  };
-
-
-
   const handleScroll = (scrollName: string) => {
     const findedElement = isScrolls.find((element) => element.name === scrollName);
     const y = findedElement?.ref.current?.offsetTop;
