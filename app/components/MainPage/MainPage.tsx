@@ -4,7 +4,7 @@ import { Header } from '../Header/Header';
 import Main from '../main/Main';
 import { Services } from '../Services/Services';
 import Footer from '../Footer/Footer';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import PriceList from '../PriceList/PriceList';
 import { priceList } from '@/app/constants/priceList';
 import { ToastContainer } from 'react-toastify';
@@ -19,6 +19,7 @@ import VideoPlayer from '../VideoPlayer/VideoPlayer';
 const NavigateSocial = dynamic(() => import('../NavigateSocial/NavigateSocial'));
 
 import styles from './style.module.scss';
+import { permission } from 'process';
 
 const MainPage = () => {
   const serviceScrollRef = useRef<HTMLDivElement>(null);
@@ -37,6 +38,28 @@ const MainPage = () => {
     { id: 5, name: 'reviews', start: false, ref: reviewsScrollRef },
     { id: 6, name: 'beforeAfter', start: false, ref: beforeAfterScrollRef },
   ]);
+
+
+  useEffect(() => {
+    console.log('mounth')
+    sendNotifiacation()
+  })
+
+
+  const sendNotifiacation = () => {
+    if (Notification.permission === 'granted') {
+      const notification = new Notification('"Не выбрасывайте старые туфли или сумки — доверьтесь мастерам «Новой Походки»!"');
+    } else if (Notification.permission !== 'denied') { 
+      Notification.requestPermission().then((permission) => {
+        if (permission === 'granted') {
+          const notification = new Notification('"Не выбрасывайте старые туфли или сумки — доверьтесь мастерам «Новой Походки»!"');
+        }
+      });
+    }
+    
+  };
+
+
 
   const handleScroll = (scrollName: string) => {
     const findedElement = isScrolls.find((element) => element.name === scrollName);
