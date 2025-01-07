@@ -19,7 +19,6 @@ import VideoPlayer from '../VideoPlayer/VideoPlayer';
 const NavigateSocial = dynamic(() => import('../NavigateSocial/NavigateSocial'));
 
 import styles from './style.module.scss';
-import { permission } from 'process';
 
 const MainPage = () => {
   const serviceScrollRef = useRef<HTMLDivElement>(null);
