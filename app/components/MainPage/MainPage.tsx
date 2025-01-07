@@ -42,7 +42,7 @@ const MainPage = () => {
   useEffect(() => {
     console.log('mounth')
     sendNotifiacation()
-  })
+  },[])
 
 
   const sendNotifiacation = () => {
