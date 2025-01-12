@@ -34,6 +34,8 @@ import before16 from '../../assets/sliderImages/before16.jpg'
 import after16 from '../../assets/sliderImages/after16.jpg'
 import before17 from '../../assets/sliderImages/before17.jpg';
 import after17 from '../../assets/sliderImages/after17.jpg';
+import before19 from '../../assets/sliderImages/before19.jpg';
+import after19 from '../../assets/sliderImages/after19.jpg';
 import React from 'react';
 
 interface IsliderBlockProp {
@@ -57,9 +59,10 @@ const sliderImages = [
     {before: before14.src, after: after14.src},
     {before: before15.src, after: after15.src},
     {before: before16.src, after: after16.src},
-    {before: before17.src, after: after17.src}
+    {before: before17.src, after: after17.src},
+    {before: before19.src, after: after19.src}
 
-]
+];
 
 
 const SliderBlock: React.FC<IsliderBlockProp> = ({scrollRef}) => {
