@@ -30,7 +30,6 @@ const Footer: React.FC<IfooterProp> = ({ scrollRef }) => {
             .catch((err) => console.error('Ошибка копирования: ', err));
     };
 
-    // Структурированные данные для SEO
     const contactSchema = {
         "@context": "https://schema.org",
         "@type": "Organization",

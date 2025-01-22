@@ -56,9 +56,9 @@ export const Menu = ({ isOpen, handleScroll, toggleMenu }: IProps) => {
                                     key={item.name}
                                     className={styles.list__item}
                                     style={{ '--i': index } as React.CSSProperties}
-                                    role="menuitem"  // Роль для каждого элемента меню
+                                    role="menuitem"  
                                     onClick={() => handleItemClick(item.scrollName)}
-                                    onKeyPress={(e) => e.key === 'Enter' && handleItemClick(item.scrollName)} // Обработка клавиши Enter
+                                    onKeyPress={(e) => e.key === 'Enter' && handleItemClick(item.scrollName)} 
                                 >
                                     <span>{item.name}</span>
                                 </li>
