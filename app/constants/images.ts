@@ -34,6 +34,9 @@ import before17 from '../assets/sliderImages/before17.jpg';
 import after17 from '../assets/sliderImages/after17.jpg';
 import before19 from '../assets/sliderImages/before19.jpg';
 import after19 from '../assets/sliderImages/after19.jpg';
+import after20 from '../assets/sliderImages/after20.jpg';
+import before20 from '../assets/sliderImages/before20.jpg';
+
 
 
 interface Isliders {
@@ -60,6 +63,8 @@ export const sliderImages: Isliders[] = [
     {before: before15.src, after: after15.src},
     {before: before16.src, after: after16.src},
     {before: before17.src, after: after17.src},
-    {before: before19.src, after: after19.src}
+    {before: before19.src, after: after19.src},
+    {before: before20.src, after: after20.src}
+
 
 ];
