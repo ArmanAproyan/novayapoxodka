@@ -1,5 +1,6 @@
 'use client'
 import { useEffect, useState } from 'react';
+import styles from './style.module.scss';
 
 const IsOpen = ({openTime,closeTime}: {openTime: number, closeTime: number}) => {
     const [open, setOpen] = useState<string>('...');
@@ -14,10 +15,10 @@ const IsOpen = ({openTime,closeTime}: {openTime: number, closeTime: number}) => 
         }
     }, [])
     return (
-        <div>
+        <div className={styles.is_open_text}>
             <span
-                style={{ color: open == 'Открыто' ? 'green' : 'red', fontWeight: 700, fontSize: '8px' }}>
-                <b style={{ color: 'white' }}> </b>
+                
+                style={{ color: open == 'Открыто' ? 'green' : 'red' }}>
                 {open}
             </span>
         </div>
