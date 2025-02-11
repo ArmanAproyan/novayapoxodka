@@ -35,7 +35,7 @@
 
 .logo__text {
     font-size: 15px;
-    color: white; 
+    color: white;
     text-shadow: 0 0 11px rgba(255, 255, 255, 2);
     text-transform: uppercase;
 }
@@ -52,7 +52,7 @@
     border-radius: 60%;
     width: 58px;
     transition: 0.2s;
-   
+
 }
 
 .menu__list {
@@ -63,19 +63,40 @@
 .list__item {
     font-family: "Montserrat";
     font-weight: 500;
+    position: relative;
 
     &>p {
         color: #d7ccc8;
         white-space: nowrap;
-
+        cursor: pointer;
     }
+
+    &>p::before {
+        content: '';
+        position: absolute;
+        bottom: -3px;
+        width: 0%;
+        height: 1.5px;
+        left: 0;
+        background-color: white;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+        transition: 0.5s;
+    }
+
+    &>p:hover::before {
+        width: 100%;
+    }
+
+
 
     &:hover>p {
         color: vars.$main-color;
         text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
         cursor: pointer;
+
     }
 }
+
 
 
 @media (max-width: 1200px) {
@@ -90,9 +111,11 @@
     .list__item {
         font-size: 0.8rem;
     }
+
     .logo__text {
         font-size: 11px;
     }
+
     .header__logo {
         gap: 10px;
     }

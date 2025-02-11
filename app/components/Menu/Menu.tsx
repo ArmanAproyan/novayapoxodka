@@ -25,8 +25,6 @@ export const Menu = ({ isOpen, handleScroll, toggleMenu }: IProps) => {
     const modalRef = useRef<HTMLDivElement | null>(null);
 
     useEffect(() => {
-
-
         if (isOpen && modalRef.current) {
             const firstItem = modalRef.current.querySelector('li');
             if (firstItem) {
