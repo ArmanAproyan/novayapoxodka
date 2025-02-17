@@ -8,6 +8,7 @@ import { Menu } from '../Menu/Menu';
 import logo from '../../assets/logo/logo.png';
 import Image from 'next/image';
 import Head from 'next/head';
+import { motion } from 'framer-motion'
 
 interface IheraderProp {
     handleScroll: (scrollName: string) => void
@@ -68,6 +69,19 @@ export const Header: React.FC<IheraderProp> = ({ handleScroll }) => {
                     <div className={styles.header__logo}>
                         <h2 style={{ color: 'white' }} onClick={() => handleScroll('main')}>
                             <div className={styles.header__logo}>
+                            <motion.div
+  initial={{  scale: 0.9, rotate: -10 }}
+  animate={{  scale: 1, rotate: 10 }}
+  transition={{
+    duration: 4,
+    delay: 2, // Задержка перед анимацией
+    type: 'spring', // Тип анимации с пружинным эффектом
+    stiffness: 80, // Жесткость для более резкого движения
+    damping: 35, // Смягчение, чтобы движение не было слишком дерганным
+    repeat: Infinity, // Бесконечное повторение анимации
+    repeatType: 'reverse', // Плавный реверс анимации
+  }}
+>
                                 <Image
                                     width={58}
                                     height={50}
@@ -75,6 +89,7 @@ export const Header: React.FC<IheraderProp> = ({ handleScroll }) => {
                                     src={logo}
                                     className={styles.logo__img}
                                 />
+                                </motion.div>
                                 <span className={styles.logo__text}>Новая Походка</span>
                             </div>
                         </h2>
