@@ -1,14 +1,24 @@
 'use client';
 
 import styles from './style.module.scss';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { IoMenu } from "react-icons/io5";
 import { IoMdClose } from "react-icons/io";
-import { Menu } from '../Menu/Menu';
 import logo from '../../assets/logo/logo.png';
 import Image from 'next/image';
 import Head from 'next/head';
 import { motion } from 'framer-motion'
+
+interface IMenuItem {
+    name: string;
+    scrollName: string;
+}
+const menuItems: IMenuItem[] = [
+    { name: 'Услуги', scrollName: 'services' },
+    { name: 'Цены', scrollName: 'price' },
+    { name: 'Наши работы', scrollName: 'beforeAfter' },
+    { name: 'Контакты', scrollName: 'contacts' }
+];
 
 interface IheraderProp {
     handleScroll: (scrollName: string) => void
@@ -16,40 +26,44 @@ interface IheraderProp {
 
 export const Header: React.FC<IheraderProp> = ({ handleScroll }) => {
 
-    const [isSmall, setIsSmall] = useState<boolean>(false);
+    const [isOpenMenue, setIsOpenMenue] = useState<boolean>(true);
     const [isScroll, setIsScroll] = useState<boolean>(false);
-    const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+    const modalRef = useRef<HTMLUListElement | null>(null);
+
+    useEffect(() => {
+        if (isOpenMenue && modalRef.current) {
+            const firstItem = modalRef.current.querySelector('li');
+            if (firstItem) {
+                (firstItem as HTMLElement).focus();
+            }
+        }
+    }, [isOpenMenue]);
 
     useEffect(() => {
         if (typeof window !== "undefined") {
-            const handleResize = () => {
-                setIsSmall(window.innerWidth < 768);
-
-                if (window.innerWidth > 768) {
-                    setIsMenuOpen(false);
-                }
-            };
 
             const handleScroll = () => {
                 setIsScroll(window.scrollY > 0);
             };
 
-            handleResize();
             handleScroll();
 
-            window.addEventListener("resize", handleResize);
             window.addEventListener("scroll", handleScroll);
 
             return () => {
-                window.removeEventListener("resize", handleResize);
                 window.removeEventListener("scroll", handleScroll);
             };
         }
     }, []);
 
     const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen);
+        setIsOpenMenue(!isOpenMenue);
     }
+
+    const closeMenue = () => {
+        setIsOpenMenue(true)
+
+    };
 
     return (
         <>
@@ -64,60 +78,65 @@ export const Header: React.FC<IheraderProp> = ({ handleScroll }) => {
                 <meta property="og:image" content="/path/to/logo.png" />
             </Head>
 
-            <header className={`${styles.wrapper} ${isScroll || isMenuOpen ? styles.headerScroll : ""}`}>
+            <header className={`${styles.wrapper} ${isScroll || isOpenMenue ? styles.headerScroll : ""}`}>
                 <div className={`container ${styles.header}`}>
                     <div className={styles.header__logo}>
                         <h2 style={{ color: 'white' }} onClick={() => handleScroll('main')}>
                             <div className={styles.header__logo}>
-                            <motion.div
-  initial={{  scale: 0.9, rotate: -10 }}
-  animate={{  scale: 1, rotate: 10 }}
-  transition={{
-    duration: 4,
-    delay: 2, // Задержка перед анимацией
-    type: 'spring', // Тип анимации с пружинным эффектом
-    stiffness: 80, // Жесткость для более резкого движения
-    damping: 35, // Смягчение, чтобы движение не было слишком дерганным
-    repeat: Infinity, // Бесконечное повторение анимации
-    repeatType: 'reverse', // Плавный реверс анимации
-  }}
->
-                                <Image
-                                    width={58}
-                                    height={50}
-                                    alt="Logo"
-                                    src={logo}
-                                    className={styles.logo__img}
-                                />
+                                <motion.div
+                                    initial={{ scale: 0.9, rotate: -10 }}
+                                    animate={{ scale: 1, rotate: 10 }}
+                                    transition={{
+                                        duration: 4,
+                                        delay: 2,
+                                        type: 'spring',
+                                        stiffness: 80,
+                                        damping: 35,
+                                        repeat: Infinity,
+                                        repeatType: 'reverse',
+                                    }}
+                                >
+                                    <Image
+                                        width={58}
+                                        height={50}
+                                        alt="Logo"
+                                        src={logo}
+                                        className={styles.logo__img}
+                                    />
                                 </motion.div>
                                 <span className={styles.logo__text}>Новая Походка</span>
                             </div>
                         </h2>
                     </div>
                     {
-                        !isSmall ?
-                            <nav className={styles.header__menu}>
-                                <ul className={styles.menu__list}>
-                                    <li className={styles.list__item}>
-                                        <p onClick={() => handleScroll('services')}>Услуги</p>
-                                    </li>
-                                    <li onClick={() => handleScroll('price')} className={styles.list__item}>
-                                        <p>Цены</p>
-                                    </li>
-                                    <li onClick={() => handleScroll('beforeAfter')} className={styles.list__item}>
-                                        <p>Наши работы</p>
-                                    </li>
-                                    <li onClick={() => handleScroll('contacts')} className={styles.list__item}>
-                                        <p>Контакты</p>
-                                    </li>
-                                </ul>
-                            </nav>
-                            :
-                            (isMenuOpen ? <IoMdClose color='#d7ccc8' size={25} onClick={toggleMenu} /> : <IoMenu color='#d7ccc8' size={25} onClick={toggleMenu} />)
+                        <nav className={isOpenMenue ? styles.header__menu : styles.header_menu_active}>
+                            <ul ref={modalRef} className={isOpenMenue ? styles.menu__list : styles.active}>
+
+                                {menuItems.map((val) => {
+                                    return (
+                                        <li className={styles.list__item}
+                                            role="menuitem">
+                                            <p onClick={() => {
+                                                handleScroll(val.scrollName)
+                                                closeMenue()
+                                            }}>{val.name}</p>
+                                        </li>
+                                    )
+                                })}
+                            </ul>
+
+                        </nav>
                     }
                 </div>
+                <div className={styles.mobile_menue}>
+                    {
+                        isOpenMenue ? <IoMenu className={styles.open_menue_item} color='#d7ccc8' size={25} onClick={toggleMenu} /> :
+                            <IoMdClose className={styles.menue_toggle_item} color='#d7ccc8' size={25} onClick={toggleMenu} />
+
+                    }
+
+                </div>
             </header>
-            <Menu toggleMenu={toggleMenu} handleScroll={handleScroll} isOpen={isMenuOpen} />
         </>
     )
 }
