@@ -58,12 +58,14 @@
 .menu__list {
     display: flex;
     gap: 50px;
+
 }
 
 .list__item {
     font-family: "Montserrat";
     font-weight: 500;
     position: relative;
+
 
     &>p {
         color: #d7ccc8;
@@ -106,14 +108,12 @@
     display: none;
 }
 
-.header__menu {
-    // animation: menue_animate_close 1s forwards;
-
+.open_menue_item {
+    animation: fadeIn 1s;
 }
 
-.header_menu_active {
-    animation: menue_animate_close 1s forwards;
-}
+
+
 
 .active {
     display: none;
@@ -145,6 +145,7 @@
 
     .menue_toggle_item {
         display: block;
+        animation: fadeIn 0.5s forwards ;
     }
 
     .list__item {
@@ -156,7 +157,7 @@
         &>p {
             font-size: 1.5rem;
             font-weight: bold;
-            color: #f1f1f1; // Белый текст
+            color: #f1f1f1;
             text-transform: uppercase;
             letter-spacing: 0.1em;
             cursor: pointer;
@@ -170,7 +171,7 @@
                 left: 0;
                 width: 0;
                 height: 2px;
-                background-color: #ffcc00; // Желтая линия
+                background-color: #f1f1f1;
                 transition: width 0.3s ease;
             }
 
@@ -179,7 +180,7 @@
             }
 
             &:hover {
-                color: #ffcc00; // Акцентный желтый при наведении
+                color: #ffcc00;
             }
         }
     }
@@ -198,15 +199,21 @@
         align-items: center;
     }
 
+    .close_menu {
+        animation: menue_animate_close 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+
     .active {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         gap: 25px;
+        margin-bottom: 80px;
     }
 
 }
+
 
 
 
@@ -250,23 +257,20 @@
 @keyframes menue_animate_close {
     from {
         opacity: 1;
-        transform: translateY(0);
     }
 
     to {
         opacity: 0;
-        transform: translateY(20px);
     }
 }
 
+
 @keyframes fadeIn {
-    from {
+    0% {
         opacity: 0;
-        transform: translateY(20px);
     }
 
-    to {
+    100% {
         opacity: 1;
-        transform: translateY(0);
     }
 }

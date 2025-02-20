@@ -56,14 +56,29 @@ export const Header: React.FC<IheraderProp> = ({ handleScroll }) => {
         }
     }, []);
 
-    const toggleMenu = () => {
-        setIsOpenMenue(!isOpenMenue);
-    }
 
     const closeMenue = () => {
-        setIsOpenMenue(true)
+        const menue = document.querySelector(`.${styles.header_menu_active}`);
 
+        if (menue) {
+            menue.classList.add(styles.close_menu);
+
+            setTimeout(() => {
+                setIsOpenMenue(true);
+                menue.classList.remove(styles.close_menu);
+            }, 500);
+        }
     };
+
+    const toggleMenu = () => {
+        if (isOpenMenue) {
+            setIsOpenMenue(false);
+        } else {
+            closeMenue()
+        }
+    };
+
+
 
     return (
         <>
@@ -114,7 +129,7 @@ export const Header: React.FC<IheraderProp> = ({ handleScroll }) => {
 
                                 {menuItems.map((val) => {
                                     return (
-                                        <li className={styles.list__item}
+                                        <li key={val.name} className={styles.list__item}
                                             role="menuitem">
                                             <p onClick={() => {
                                                 handleScroll(val.scrollName)
