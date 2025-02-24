@@ -72,6 +72,7 @@ export const Header: React.FC<IheraderProp> = ({ handleScroll }) => {
 
     const toggleMenu = () => {
         if (isOpenMenue) {
+            window.scrollBy(0,1);
             setIsOpenMenue(false);
         } else {
             closeMenue()
