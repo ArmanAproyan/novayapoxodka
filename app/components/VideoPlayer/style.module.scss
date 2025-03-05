@@ -23,13 +23,15 @@
 }
 
 .playerWrapper {
+  width: 100%;
+  height: 500px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .player {
-  width: 100%;
+  max-width: 100%;
   max-width: 720px;
 }
 
@@ -44,6 +46,9 @@
   .player {
     width: 500px !important;
     height: 300px !important;
+  }
+  .playerWrapper {
+    height: 300px;
   }
 }
 
