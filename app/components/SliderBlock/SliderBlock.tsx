@@ -19,7 +19,7 @@ const SliderBlock: React.FC<IsliderBlockProp> = ({scrollRef}) => {
         {sliderImages.map((item,index) => {
             return (
                 <div key={index}>
-                <Slider before={item.before} after={item.after}/>
+                     <Slider before={item.before} after={item.after}/>
                 </div>
             )
         })}

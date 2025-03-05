@@ -12,7 +12,6 @@ interface IfooterProp {
 }
 
 const Footer: React.FC<IfooterProp> = ({ scrollRef }) => {
-
     const [isCopied, setIsCopied] = React.useState<boolean>(false);
 
 

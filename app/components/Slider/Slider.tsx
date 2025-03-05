@@ -8,6 +8,7 @@ interface ISliderProps {
 }
 
 const Slider: React.FC<ISliderProps> = ({before,after}) => {
+
   return (
     <div className={styles.container}>
         <div className={styles.text_block}>

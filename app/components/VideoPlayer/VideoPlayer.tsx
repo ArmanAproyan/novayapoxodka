@@ -4,7 +4,9 @@ import styles from './style.module.scss';
 import dynamic from 'next/dynamic';
 
 const ReactPlayer = dynamic(() => import('react-player'), {ssr: false});
+
 const VideoPlayer: React.FC = () => {
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.title}>

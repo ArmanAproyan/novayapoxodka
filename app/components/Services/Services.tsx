@@ -50,6 +50,7 @@ const servicesData = [
 ];
 
 export const Services: React.FC<IservicesProp> = ({ scrollRef }) => {
+
     return (
         <section ref={scrollRef} className={styles.wrapper}>
             <div className={`container ${styles.services}`}>

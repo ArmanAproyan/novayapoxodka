@@ -4,19 +4,23 @@ import { Header } from '../Header/Header';
 import Main from '../main/Main';
 import { Services } from '../Services/Services';
 import Footer from '../Footer/Footer';
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useCallback } from 'react';
 import PriceList from '../PriceList/PriceList';
 import { priceList } from '@/app/constants/priceList';
 import { ToastContainer } from 'react-toastify';
 import AccardionAnswer from '../AccardionAnswer/AccardionAnswer.';
 import ReviewForm from '../ReviewForm/ReviewForm';
 import 'react-toastify/dist/ReactToastify.css';
-import SliderBlock from '../SliderBlock/SliderBlock';
 import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import VideoPlayer from '../VideoPlayer/VideoPlayer';
+import { Suspense } from 'react';
+import NavigateSocial from '../NavigateSocial/NavigateSocial';
 
-const NavigateSocial = dynamic(() => import('../NavigateSocial/NavigateSocial'));
+const SliderBlock = dynamic(() => import('../SliderBlock/SliderBlock'), {
+  ssr: true,
+  loading: () => <p>Загрузка...</p>,
+});
 
 import styles from './style.module.scss';
 
@@ -27,26 +31,22 @@ const MainPage = () => {
   const contactsScrollRef = useRef<HTMLDivElement>(null);
   const reviewsScrollRef = useRef<HTMLDivElement>(null);
   const beforeAfterScrollRef = useRef<HTMLDivElement>(null);
-  const [currentPosition, setCurrentPosition] = useState(0);
 
-  const [isScrolls, setIsScrolls] = useState([
-    { id: 1, name: 'services', start: false, ref: serviceScrollRef },
-    { id: 2, name: 'main', start: false, ref: mainScrollRef },
-    { id: 3, name: 'price', start: false, ref: priceScrollRef },
-    { id: 4, name: 'contacts', start: false, ref: contactsScrollRef },
-    { id: 5, name: 'reviews', start: false, ref: reviewsScrollRef },
-    { id: 6, name: 'beforeAfter', start: false, ref: beforeAfterScrollRef },
-  ]);
+  const handleScroll = useCallback((scrollName: string) => {
+    const findedElement = [
+      { name: 'services', ref: serviceScrollRef },
+      { name: 'main', ref: mainScrollRef },
+      { name: 'price', ref: priceScrollRef },
+      { name: 'contacts', ref: contactsScrollRef },
+      { name: 'reviews', ref: reviewsScrollRef },
+      { name: 'beforeAfter', ref: beforeAfterScrollRef },
+    ].find((element) => element.name === scrollName);
 
-
-  const handleScroll = (scrollName: string) => {
-    const findedElement = isScrolls.find((element) => element.name === scrollName);
-    const y = findedElement?.ref.current?.offsetTop;
-    if (y !== undefined) {
+    if (findedElement && findedElement.ref.current) {
+      const y = findedElement.ref.current.offsetTop;
       window.scrollTo({ top: y - 100, behavior: 'smooth' });
-      setCurrentPosition(y - 100);
     }
-  };
+  }, []);
 
   return (
     <>
@@ -78,11 +78,13 @@ const MainPage = () => {
         <Header handleScroll={handleScroll} />
         <Main scrollRef={mainScrollRef} handleScroll={handleScroll} />
         <Services scrollRef={serviceScrollRef} />
-        <SliderBlock scrollRef={beforeAfterScrollRef} />
+        <Suspense fallback={'Загрузка...'}>
+          <SliderBlock scrollRef={beforeAfterScrollRef} />
+        </Suspense>
         <NavigateSocial />
         <PriceList scrollRef={priceScrollRef} prices={priceList} />
         <AccardionAnswer />
-        <VideoPlayer/>
+        <VideoPlayer />
         <ReviewForm scrollRef={reviewsScrollRef} />
         <Footer scrollRef={contactsScrollRef} />
         <ToastContainer />
