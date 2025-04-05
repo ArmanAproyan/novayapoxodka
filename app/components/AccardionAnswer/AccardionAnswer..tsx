@@ -33,7 +33,7 @@ const AccardionAnswer = () => {
                   <Accordion>
                     <AccordionSummary
                       expandIcon={<FaArrowDown />}
-                      aria-controls={`panel${index}-content`}  
+                      aria-controls={`panel${index}-content`}
                       id={`panel${index}-header`}  
                     >
                       <span className={styles.question_text}>{val.question}</span>
